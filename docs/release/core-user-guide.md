@@ -1,16 +1,16 @@
 # SonoHUD Core 사용 안내
 
-Windows 11 x64용 음악 플레이어, 데스크톱 오버레이와 작업 표시줄 위젯입니다. 공식 배포 예정 위치는 [GitHub Releases](https://github.com/Revo-32/sonohud/releases)입니다. 첫 공개 전에는 다운로드가 없을 수 있습니다.
+Windows 11 x64용 음악 플레이어, 데스크톱 오버레이와 작업 표시줄 위젯입니다. 설치 파일과 Portable ZIP은 [공식 GitHub Releases](https://github.com/Revo-32/sonohud/releases/latest)에서 받으세요.
 
 ## 설치하거나 압축을 풀어 실행
 
 - **설치형**은 `SonoHUD-Setup.exe`를 열고 설치한 뒤 시작 메뉴에서 **SonoHUD**를 선택하세요. 실행에 필요한 x64 .NET 10 Desktop Runtime을 준비하세요. Windows 설정의 설치된 앱에서 제거할 수 있습니다.
 - **Portable**은 새 폴더에 ZIP 전체를 풀고 `SonoHUD.exe`를 실행하세요. 수동 업데이트 시 앱을 정상 종료하고 다음 버전은 새 폴더에 풉니다.
-- 런타임 다운로드 안내가 나오면 Microsoft의 **.NET Desktop Runtime 10 → Windows x64**를 사용하세요. 이 후보에서 직접 검증한 OS는 Windows 11 Home x64 빌드 26300.9974입니다. [Microsoft 공식 런타임](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+- 런타임 다운로드 안내가 나오면 Microsoft의 **.NET Desktop Runtime 10 → Windows x64**를 사용하세요. v1.0.0에서 직접 검증한 OS는 Windows 11 Home x64 빌드 26300.9974입니다. [Microsoft 공식 런타임](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 ### Windows 보안 표시와 파일 확인
 
-설치 프로그램과 앱은 Authenticode 미서명입니다. Windows가 게시자를 알 수 없다고 표시하거나 Smart App Control 또는 조직 정책이 실행을 차단할 수 있습니다. 공개 이후에는 프로젝트의 공식 GitHub Releases에서 받은 파일을 사용하세요. 내려받은 폴더에서 PowerShell로 다음을 실행하고, 같은 릴리스의 SHA256SUMS.txt에 적힌 파일명과 값이 일치하는지 확인하세요.
+설치 프로그램과 앱은 Authenticode 미서명입니다. Windows가 게시자를 알 수 없다고 표시하거나 Smart App Control 또는 조직 정책이 실행을 차단할 수 있습니다. 프로젝트의 공식 GitHub Releases에서 받은 파일을 사용하세요. 내려받은 폴더에서 PowerShell로 다음을 실행하고, 같은 릴리스의 SHA256SUMS.txt에 적힌 파일명과 값이 일치하는지 확인하세요.
 
 ```powershell
 Get-FileHash -Algorithm SHA256 -LiteralPath .\SonoHUD-Setup.exe
@@ -32,8 +32,8 @@ SHA-256은 받은 파일의 내용을 대조하는 값입니다. 게시자 신�
 
 ## 업데이트·시작·제거
 
-설치형은 설정에서 Revo-32/sonohud의 공식 Stable 업데이트를 확인합니다. 첫 공개 전에는 서버에 릴리스 자산이 없습니다. 서명과 파일 지문 검증이 실패하면 기존 버전을 유지합니다. 준비된 업데이트는 저장한 뒤 사용자가 동의할 때 재시작해 적용합니다. 로그인 자동 실행은 기본 꺼짐이며 설정에서 선택합니다. 로그인 실행은 트레이에서 시작합니다. 배포본의 버전과 각 구성 요소에 대한 고지는 **설정 → 제품 정보와 라이선스**에서 읽을 수 있습니다.
+설치형은 설정에서 Revo-32/sonohud의 공식 Stable 업데이트를 확인합니다. 서명과 파일 지문 검증이 실패하면 기존 버전을 유지합니다. 준비된 업데이트는 저장한 뒤 사용자가 동의할 때 재시작해 적용합니다. 로그인 자동 실행은 기본 꺼짐이며 설정에서 선택합니다. 로그인 실행은 트레이에서 시작합니다. 배포본의 버전과 각 구성 요소에 대한 고지는 **설정 → 제품 정보와 라이선스**에서 읽을 수 있습니다.
 
-제거하면 사용자 설정과 확장은 보존됩니다. 완전히 초기화하려면 앱을 닫고 `%LOCALAPPDATA%\SonoHUD`를 별도 위치로 백업한 뒤 해당 사용자 데이터 폴더를 정리하세요. 이전 RevoMusic 데이터가 있으면 첫 실행에서 가져올 수 있습니다. 해시를 대조할 수 있으며 미서명 후보는 Windows에서 알 수 없는 게시자로 표시될 수 있습니다.
+제거하면 사용자 설정과 확장은 보존됩니다. 완전히 초기화하려면 앱을 닫고 `%LOCALAPPDATA%\SonoHUD`를 별도 위치로 백업한 뒤 해당 사용자 데이터 폴더를 정리하세요. 이전 RevoMusic 데이터가 있으면 첫 실행에서 가져올 수 있습니다.
 
 업데이트가 설치 폴더의 추가·변경 파일 때문에 멈추면 기존 버전은 계속 사용할 수 있습니다. 직접 넣은 파일은 설치 폴더 밖에 보관하세요. 변경한 배포 파일은 사본을 보관하고 같은 버전의 원본을 복원한 뒤 다시 시도하세요. 사용 중인 파일이 원인이면 해당 파일을 쓰는 프로그램을 정상 종료한 뒤 재시도하세요.

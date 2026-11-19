@@ -1,6 +1,6 @@
 # 검토한 Windows 공개 후보 만들기
 
-공개 저장소의 입력은 검증된 대응 소스 ZIP입니다. 개인 확장이나 내부 시험 자료가 섞인 작업 폴더를 업로드하면 안 됩니다. 해당 ZIP에는 앱·계약·Core 회귀 시험, 수정 가능한 의존 소스, 라이선스, 도구 입력과 GitHub Actions 정의가 있습니다. 공식 운영 대상은 Revo-32/sonohud의 Releases이며 첫 공개 전에 자산이 없을 수 있습니다.
+공개 저장소의 입력은 검증된 대응 소스 ZIP입니다. 개인 확장이나 내부 시험 자료가 섞인 작업 폴더를 업로드하면 안 됩니다. 해당 ZIP에는 앱·계약·Core 회귀 시험, 수정 가능한 의존 소스, 라이선스, 도구 입력과 GitHub Actions 정의가 있습니다. 공식 Stable 채널의 설치 파일, 패키지, 업데이트 목록과 서명은 [GitHub Releases](https://github.com/Revo-32/sonohud/releases/latest)에 게시합니다.
 
 ## 로컬 후보
 
