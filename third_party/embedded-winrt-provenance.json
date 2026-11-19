@@ -1,0 +1,356 @@
+{
+  "schema": 1,
+  "metadata": {
+    "repository": "https://github.com/microsoft/windows-rs",
+    "commit": "4b8893b307719ec23cce698269ca572ef301dc5c",
+    "path": "crates/libs/bindgen/default/Windows.winmd",
+    "license": "MIT OR Apache-2.0",
+    "selectedLicense": "MIT",
+    "sha256": "aea3e9828927aedd1ace2b927911e826f386d5c52dc6bd4151c10d314cb1adbf"
+  },
+  "generator": {
+    "package": "Microsoft.Windows.CsWinRT",
+    "version": "2.2.0",
+    "sourceCommit": "8649ee3eeb2445ca2a36d80d878ef60b96a6c65d",
+    "license": "MIT",
+    "nupkgSha256": "a89df04f86c1671fcf30ccd6f5cc78eb189a29daa19f3d92d00987d4b3fc3b63"
+  },
+  "embeddedRuntime": [
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ActivationFactory.cs",
+      "sha256": "23b3dce80a61c38b8e8f5df4633eede149f2938b815ef45187831bcc8fb8ec7f"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/AgileReference.cs",
+      "sha256": "6e82231e9ffb10ab9d51872972d3133b5d710aff695996d57b9496878dfe1e8c"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Attributes.cs",
+      "sha256": "613977c52f1b97284d547bacfa7eab59ad431baa2f9c94ed9319481e2924aa6b"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/CastExtensions.cs",
+      "sha256": "6b98a05cf769f65f9d181c727b1ba902d7c8a9572151a4ccfc01d6bc26950e32"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ComWrappersSupport.cs",
+      "sha256": "06e53cd2448eea8076055aa647b4b23dd1e57a7b5d011122449b1a4e411edd93"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Context.cs",
+      "sha256": "d4d2635b9e85944b2ef9a50e70fa1cdb4fe2b91b1fdc9010a2fd664fe83be4ce"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/DataErrorsChangedEventArgs.cs",
+      "sha256": "5156068419fdb9ff2aef4fd3d1ddd4c6c1c85b785e15da6b8fb86b89a76a7115"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/DelegateExtensions.cs",
+      "sha256": "d739e32746f5aff3778b5dfcf6861dec75f5125a8605938ff17af9dadd501dda"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/DerivedComposed.cs",
+      "sha256": "4bf5b6b69f101d20ac50d366123a2bcb89c9e85e08830d5c0de90a2f5efbbfac"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventHandler.cs",
+      "sha256": "526488904f878374105d098b2ca1d1704f03638b8b34438cd220588d3577943c"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventHandlerEventSource.cs",
+      "sha256": "53cfd98f2a41a98aa93dc6e4fcfd3ae795d7a5973062a574995d69ab1340b608"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventHandlerEventSource{T}.cs",
+      "sha256": "149bdc1b6163eaf164b342a5e486fb837a258df21de8e68bfae51d725fad2ee8"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventRegistrationToken.cs",
+      "sha256": "81dc91555205a589aa8aa0863bc6258973679608bd4d4bc4809e1d5799a25537"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventRegistrationTokenTable{T}.cs",
+      "sha256": "f71108f4aaa83ed96eaf99f333b9f985b1e4fee18200f18bf9df0d29330005e7"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventSourceCache.cs",
+      "sha256": "9b483f7e085a9c78ff120062578c6ece214b01ea9679d5eaed210fefc1aafb88"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventSourceState{TDelegate}.cs",
+      "sha256": "e609dbdc38d7debd3db507fbfbc69212aac703d66c40ff48f2c9429578799f95"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/EventSource{TDelegate}.cs",
+      "sha256": "a18d3df208c6594b2b4ccc619662963ea6582cf8b82ff6f67403cf5a0a86e5ef"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ExceptionErrorInfo.cs",
+      "sha256": "a0f6ae3edfefe8b544f360f8336154426217cecf82a701b046de982ee5e2dfd1"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ExceptionHelpers.cs",
+      "sha256": "2a1c53d7a7bf4591ac9ab2db2a508efb172e4074dbc295456131b05fd3e159e3"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ExceptionHelpers.Microsoft.cs",
+      "sha256": "2c2dd7c8cbf36089922cae1ab0834887d00b779bfc46dd4c800282c4ecde75cc"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/FeatureSwitches.cs",
+      "sha256": "0bfe7b99138c057a10131c592581a0b9e6c8def99d476c6546dff751714f7d9d"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/FundamentalMarshalers.cs",
+      "sha256": "a72a2277ce3981a688689a7886ff27004e4db25986ab8a751fcf842cab9196a8"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Geometry.cs",
+      "sha256": "9a19c9c74da1ff06512b93fc2777aa3cf1ffa9253077d4ec842abaf3927dedc8"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/GuidGenerator.cs",
+      "sha256": "ff2f9f56817f743ff54ec82ca2138f653177d8375f497734858ab3b9823779cd"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IActivationFactory.cs",
+      "sha256": "b76870c4c75de1e1af0386f17297a947a6311c37b9524f0b8fdeaef8edbf7e69"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IContextCallback.cs",
+      "sha256": "bded61004e28514ee152ce05db0b11f250a205441a5c0878db9979291efcda2d"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IDelegateVftbl.cs",
+      "sha256": "856045e2617bae827ec2231b1df97071dcf9403df7659bc500e571ff8f2428cb"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IID.g.cs",
+      "sha256": "61b758f6ab2edce558ee65c0f0c08950ef35adfda82f468a518b448f6a343fdb"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IInspectable.cs",
+      "sha256": "b25dee6daa28d0af91f160a7c1fc69c48b7be1f9b0f830b3ef241f691844bb29"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IReferenceTracker.cs",
+      "sha256": "07389e2b9952e75944e31e1a75dc418359b092fec582698c7dcf5799249ecf58"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IStringable.cs",
+      "sha256": "397c06a899366bc10f26fc0b08f6a9e3e4423262747299bb67df902f70c5222b"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/IUnknownVftbl.cs",
+      "sha256": "42d76bcbc1086ac841985a6dc9268a23dc8818c84adc4dc535f0f4e003a69d1b"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/KeyValuePair.cs",
+      "sha256": "274f7b7e5777892d9d75281f156e05626e6c6803a8b4151cb309ebd6f01c1d8c"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Marshalers.cs",
+      "sha256": "4c4bf6088d936c0d3957841c2b0a2720c71ddfe9b75a15a30e3239ee55b781bc"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Module.cs",
+      "sha256": "c968db4a62378ecceae57afb1fe5f08a4f8c6aa91a20cc6db15e0f7ac18f471a"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/MonoSupport.cs",
+      "sha256": "f347f1a0f99fef684e711ebbcdfd9b8ab6aab30dca8c3d0d9bac4f4396c7c308"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/NotifyCollectionChangedAction.cs",
+      "sha256": "ec15a9d85a9c06778e3e86ada2c81a1dd511d72d8840df285e35bce3a108c6f5"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/NotifyCollectionChangedEventArgs.cs",
+      "sha256": "de1ec7b4f47dd6f33db62fbc3ea921a29bb72c769b64e26214f9fa5ed6b753c2"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/NotifyCollectionChangedEventHandler.cs",
+      "sha256": "f2019d656d67a84f26f20c06cfb97f881c7d4ed5bc347fead3c14d6f42cb76f9"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Nullable.cs",
+      "sha256": "f1d96e01dde10d5a532628c1f9b18ab3a3d3c073129f46ad0be507cfb589953c"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Numerics.cs",
+      "sha256": "37d7d0098b08007d9a1d85790b375de3301d32d4030898b692978777bbfc0258"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/ObjectReference.cs",
+      "sha256": "a417113c6d402105b201a7b14171e4c8218e1554f67a1c887a21c1f8154bef15"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Platform.cs",
+      "sha256": "f32637deedb6d02962ee1b13d2802f78f6a09b2d221182d57c2e18d106744059"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Projections.cs",
+      "sha256": "b5b65ad9a1d9a13235de8b8ba8fa66f1dc4ea82a0a457a44f675c02e9ee92d2d"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Projections.CustomTypeMappings.EventHandler.cs",
+      "sha256": "fa6cedb22b9984ed5ad92ba2e0e2c02a7dcb4c26edd1e9f4039e1147d891f66a"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Projections.CustomTypeMappings.g.cs",
+      "sha256": "596efc0f2f9d230badc4d4ec6e0bdcd494309ae9bcb20c29d1ad1d232c1c3125"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/PropertyChangedEventArgs.cs",
+      "sha256": "2433f781014015f2282684704cc66c5372295a7f929b19551c57c3b75d1892ff"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/PropertyChangedEventHandler.cs",
+      "sha256": "3d0cbb7399fccf7994602e08a96b10f62cc2ba09d076e50006e404c6d5f4b4dd"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/StandardDelegates.cs",
+      "sha256": "cef1239fed94ef614d26f7e20e60fbaa957c063329fb0edf35fe0666967c4054"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/SystemTypes.cs",
+      "sha256": "e4ef137a599af5098ad1c3ed11b080cf8ed601b26c0c887efdb2ded5a471d6fc"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Type.ArrayMarshalling.cs",
+      "sha256": "9ab2bd1d749c6ded5f8b32a3ca6884648a0af49bb63eb7b74a815aad012fb518"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Type.cs",
+      "sha256": "e77ac0b2daa7475d48ef18d4da77fcd2b3f0aea353cbdb69aa0d275019577eee"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/TypeExtensions.cs",
+      "sha256": "f94fdda48bf233836484879830bb3316ccd90e4796ecf304439a3470c45e52fe"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/TypeNameSupport.cs",
+      "sha256": "0d5d024fda92b4b982a1270eba4a04453b26ea376f723c0a1f0a4b34c092c5e1"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/Uri.cs",
+      "sha256": "e9d1f63b6e13c7b20984cfdf13f30c340f961996da43c890c2b45cb10ffd43ab"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/WinRTRuntimeErrorStrings.Designer.cs",
+      "sha256": "92382631cf5342f40272bbeb9b4e81723f9461bca66c5b6c7aa10eee8655a61e"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/any/WuxMuxProjectedTypeAttribute.cs",
+      "sha256": "86d6d47d8f1b3661383d8a977bf78ae7aebc8cc62f8e80d8ae3e920ceaefe3ed"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/AttributeMessages.net5.cs",
+      "sha256": "bd753f5b516b5db1519c34a4540b65ce0fab550f4e232bfaa8a1fd3ea1ea3c1c"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/Bindable.net5.cs",
+      "sha256": "9aeb2ffa3fdb3dc278b8fe10e54f4107c8ab599d4d25450dfa2f3e322cc696d6"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/CollectionHybrid.net5.cs",
+      "sha256": "04e8ea18789da28d80308646d8cb9dba352061e799eed08690a21b1001b1f9a7"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/ComWrappersSupport.net5.cs",
+      "sha256": "782c6b3b07ef998f61c69f97d3539794bde1322810b116da09d5f6d236f38a0b"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/ExceptionErrorInfo.net5.cs",
+      "sha256": "89ff81d7ee9577f2113c258d7eabe26ac6a4f90b55a882182b2efb02ed19a212"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/ExceptionHelpers.Windows.net5.cs",
+      "sha256": "5b168d3fe1207eca5599d09f02c280388b0659573137b181f4c960fe004e3828"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/GenericDelegateHelper.net5.cs",
+      "sha256": "55eb8bb90b2f33083a83e787d31ce3f59f34cdb294e980d4985ff40cf76c271a"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IAgileReference.net5.cs",
+      "sha256": "e398b0143cc7521b4091d8c2cf1e5317142adc2236b9b93584f6a64dd2d9c1f5"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/ICommand.net5.cs",
+      "sha256": "208e8a769deae6e832947daf01d28c1b202dc9c7e61a505ff2bca2adc85b8e69"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/ICustomPropertyProvider.net5.cs",
+      "sha256": "e77fa15b58d6ffbe7c001443a9cd58b4209db6d570034f4675a500c7b4940e19"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IDictionary.net5.cs",
+      "sha256": "0a7b0eca589ce716026f737e8b6f993b0cb643ec243b6afa4dbf387819732ab3"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IDisposable.net5.cs",
+      "sha256": "c8bbfc05c5315f8323b69eaceb5b1f937413eea63a498c1c684cb947f4a2eb69"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IEnumerable.net5.cs",
+      "sha256": "f79dfe341ae66a2c88d520f8860d115b1aea6ee978190984bb2b18804d35b3f4"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IInspectable.net5.cs",
+      "sha256": "ce808cd6818399ef4db8350b971cee33774db8575f2770e4911457b67d17a62a"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IList.net5.cs",
+      "sha256": "982fe6b4ae9aa9d96160bf474c6837b5ad521d8c0642b496a28409e99b89d3e2"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IMarshal.net5.cs",
+      "sha256": "f8b82a4967d2aa58e144f5f0cc1dedd28f73c0d9c1304426375bacb2634242ca"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/INotifyCollectionChanged.net5.cs",
+      "sha256": "6631c7b1db0ec289235b1feae5fb00271533bcec83e9d758c4a3907a490ce8a4"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/INotifyDataErrorInfo.net5.cs",
+      "sha256": "d79a4c0025503b61be717d3d5791ba074a019800f5583f74f407a7b3cbc466f1"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/INotifyPropertyChanged.net5.cs",
+      "sha256": "146b1c06e59ce9e5ff4d7815d473bd3c0ea4db1efa575aa3009c82911890cbd1"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IPropertyValue.net5.cs",
+      "sha256": "087e484ffe4912aca128ecf4e1e5e89cd715f4f6c7d0e9dd252aeb712d30cb90"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IReadOnlyDictionary.net5.cs",
+      "sha256": "d7e39598af6e09ff5cf2686564a0d27985580fa7b81e818a90cb537f57100d3e"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IReadOnlyList.net5.cs",
+      "sha256": "53029933947c46e62a90eaf243094dd163974464e1b1873a6bf65b43862be4f5"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IReferenceArray.net5.cs",
+      "sha256": "ce84dfe1bc5bfc1eb75acc3073f20d4d6411ef9240ce68c6b9b6ab60fe60d74a"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IServiceProvider.net5.cs",
+      "sha256": "5ac122300f726557107ec7660907fe61a7edec34dba8ef339cd171aa624a65a4"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IWeakReferenceSource.net5.cs",
+      "sha256": "e704de9e83ecf9ad398b44ddf26911c5c602fcb60148d68b0062f5fe738263ee"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/IWinRTObject.net5.cs",
+      "sha256": "092830291bca67ecbcc3455daf01133535784a90063e6f86415b1cacce4b4722"
+    },
+    {
+      "path": "third_party/CsWinRT-2.2.0/embedded/net6.0/SingleInterfaceOptimizedObject.net5.cs",
+      "sha256": "13b49cf241cc94be965e82f525205a714444c165962ca361faa719634189cf58"
+    }
+  ]
+}

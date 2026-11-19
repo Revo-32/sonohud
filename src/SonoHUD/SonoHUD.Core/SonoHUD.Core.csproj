@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <!-- Extensions share Core lyric types. Keep their assembly identity stable for API v1. -->
+    <AssemblyVersion>0.7.3.0</AssemblyVersion>
+  </PropertyGroup>
+</Project>

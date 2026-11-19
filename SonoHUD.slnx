@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Solution>
+  <Project Path="src/SonoHUD/SonoHUD.App/SonoHUD.App.csproj" />
+  <Project Path="src/SonoHUD/SonoHUD.Core/SonoHUD.Core.csproj" />
+  <Project Path="src/SonoHUD/SonoHUD.PluginContracts/SonoHUD.PluginContracts.csproj" />
+</Solution>

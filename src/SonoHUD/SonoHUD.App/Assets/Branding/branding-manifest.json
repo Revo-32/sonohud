@@ -1,0 +1,22 @@
+{
+  "approvedAsset": "C-wave-refinement-v2.png",
+  "sourceSha256": "2563E17F48DD126E1A172AB10DA4AEDDFDA68E8ABE4715A880E3ABEC44D9893B",
+  "sourceWidth": 1254,
+  "sourceHeight": 1254,
+  "output": "SonoHUD.ico",
+  "outputSha256": "42BF4A5DB1CEF2F29AE684CBD22D44BA685D78696B58F30FEAB90A10386A4AAA",
+  "sizes": [
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    128,
+    256
+  ],
+  "frameEncoding": "PNG, 32-bit RGBA inside ICO",
+  "transformation": "Full-image proportional downsampling only; original transparency preserved.",
+  "generator": "Generate-Icons.ps1 / System.Drawing HighQualityBicubic"
+}

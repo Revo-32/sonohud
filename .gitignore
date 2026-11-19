@@ -1,0 +1,17 @@
+**/bin/
+**/obj/
+.vs/
+artifacts/
+evidence/
+*.user
+*.log
+*.dmp
+*.lrc
+*.dpapi
+*.pfx
+*.p12
+*.pem
+*.pk8
+.env
+.env.*
+__pycache__/

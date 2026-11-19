@@ -1,0 +1,8 @@
+{
+  "owner": "Revo-32",
+  "repository": "sonohud",
+  "channel": "stable",
+  "algorithm": "ECDSA-P256-SHA256",
+  "keyId": "421d85f1d07f9f9d2e6cf741f5438779c63f4002c75a3b2ab8f6618e985c7e3b",
+  "publicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOb30IGhOZhu7MiiCWl1UHXYtHv9qhexxSk+R4oygm+PojKFpTBmMBy82w5oYFoGmnOIfZxWt/hhtGT0LHcUyuQ=="
+}

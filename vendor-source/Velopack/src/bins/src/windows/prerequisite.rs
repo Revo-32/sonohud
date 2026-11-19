@@ -1,0 +1,75 @@
+use super::runtimes;
+use crate::dialogs;
+use anyhow::Result;
+use velopack::download;
+
+pub fn prompt_and_install_all_missing(
+    app_name: &str,
+    app_version: &str,
+    dependencies: &str,
+    updating_from: Option<&semver::Version>,
+) -> Result<bool> {
+    info!("Checking application pre-requisites...");
+    let dependencies = super::runtimes::parse_dependency_list(dependencies);
+    let mut missing: Vec<&Box<dyn runtimes::RuntimeInfo>> = Vec::new();
+    let mut missing_str = String::new();
+
+    for dep in &dependencies {
+        if dep.is_installed() {
+            info!("    {} is already installed.", dep.display_name());
+            continue;
+        }
+        info!("    {} is missing.", dep.display_name());
+        if !missing.is_empty() {
+            missing_str += ", ";
+        }
+        missing.push(dep);
+        missing_str += dep.display_name();
+    }
+
+    if !missing.is_empty() {
+        if let Some(from_version) = updating_from {
+            if !dialogs::show_update_missing_dependencies_dialog(app_name, &missing_str, &from_version.to_string(), app_version) {
+                error!("User cancelled pre-requisite installation.");
+                return Ok(false);
+            }
+        } else {
+            if !dialogs::show_setup_missing_dependencies_dialog(app_name, app_version, &missing_str) {
+                error!("User cancelled pre-requisite installation.");
+                return Ok(false);
+            }
+        }
+
+        let downloads = super::known_path::get_downloads()?;
+
+        info!("Downloading {} missing pre-requisites...", missing.len());
+        let quiet = dialogs::get_silent();
+
+        for dep in &missing {
+            let url = dep.get_download_url()?;
+            let exe_path = downloads.join(dep.get_exe_name());
+
+            if !exe_path.exists() {
+                info!("    Downloading {}...", dep.display_name());
+
+                let reporter = dialogs::progress::show_deps_download_progress(dep.display_name(), updating_from.is_some());
+                let result = download::download_url_to_file(&url, &exe_path, None, |p| {
+                    reporter.set_progress(p);
+                });
+
+                reporter.close();
+                result?;
+            }
+
+            info!("    Installing {}...", dep.display_name());
+            let result = dep.install(&exe_path, quiet)?;
+            if result == runtimes::RuntimeInstallResult::RestartRequired {
+                warn!("A restart is required to complete the installation of {}.", dep.display_name());
+                dialogs::show_restart_required(app_name, app_version);
+                return Ok(false);
+            }
+        }
+    }
+
+    Ok(true)
+}

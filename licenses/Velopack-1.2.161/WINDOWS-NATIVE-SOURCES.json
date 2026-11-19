@@ -1,0 +1,2247 @@
+{
+  "velopack": "1.2.161",
+  "rust": "1.100.0",
+  "target": "x86_64-pc-windows-gnullvm",
+  "packages": [
+    {
+      "name": "adler2",
+      "version": "2.0.1",
+      "license": "0BSD OR MIT OR Apache-2.0",
+      "crateSha256": "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa",
+      "noticeRefs": [
+        "a21c914647d33e48cb4d213dfb0749dbb45491514da9d3a8ffc4763cf456217d",
+        "1bc86297d03201537284dc3f7bc105c8ab7b053b3372d96ab935bc54acc7a430",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "aho-corasick",
+      "version": "1.1.5",
+      "license": "Unlicense OR MIT",
+      "crateSha256": "c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "154c1af2b38e25e5c18613dfe352eed29b0863cb39e494007822cdeb39150ac5"
+      ]
+    },
+    {
+      "name": "aligned",
+      "version": "0.4.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ee4508988c62edf04abd8d92897fca0c2995d907ce1dfeaf369dac3716a40685",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "8adee6e9dc6ddf8867255264a06b7c30d9f5455d2a92a055ceec9290a1c1e1ed"
+      ]
+    },
+    {
+      "name": "anstream",
+      "version": "1.0.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "824a212faf96e9acacdbd09febd34438f8f711fb84e09a8916013cd7815ca28d",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "anstyle",
+      "version": "1.0.14",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "anstyle-parse",
+      "version": "1.0.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "52ce7f38b242319f7cabaa6813055467063ecdc9d355bbb4ce0c68908cd8130e",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "anstyle-query",
+      "version": "1.1.5",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "anstyle-wincon",
+      "version": "3.0.11",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "anyhow",
+      "version": "1.0.104",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "as-slice",
+      "version": "0.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "516b6b4f0e40d50dcda9365d53964ec74560ad4284da2e7fc97122cd83174516",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "42926e590380d9377ad083dcd5a7618b0952dac81a929244f84d43fb5619acdd"
+      ]
+    },
+    {
+      "name": "autocfg",
+      "version": "1.5.1",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "99afaa30c17801207692138b8a7d9f7522b52711dabb4cde25855dadc950e4c8"
+      ]
+    },
+    {
+      "name": "base64",
+      "version": "0.23.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ac07cdecf99051d9a5238b80f35af32cdeba5b336e55d957b318b50137e18da5",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "2ff8d973431258f88429889a3a2358d66b167bd3e64764ec88f531293518dda5"
+      ]
+    },
+    {
+      "name": "bitflags",
+      "version": "2.13.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "block-buffer",
+      "version": "0.12.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "d2f6c7dbe95a6ed67ad9f18e57daf93a2f034c524b99fd2b76d18fdfeb6660aa",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "775a3e20a9af7160992745230472e424f6a82c1ea17801107e5375bebd431db6"
+      ]
+    },
+    {
+      "name": "bumpalo",
+      "version": "3.20.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "5662394bebb1a815b411eb4e101a251b1c3118b9ad44e6f305cedcebfaa2522f"
+      ]
+    },
+    {
+      "name": "bytemuck",
+      "version": "1.25.2",
+      "license": "Zlib OR Apache-2.0 OR MIT",
+      "crateSha256": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+      "noticeRefs": [
+        "0e3cbff251c122b9dc79d8193e04f631640c3dbaa90faaae9a439ebf8cda96cb",
+        "dfbd1c2a36dcf9af64e31f070485c57a51961a2767ed0a48541ec065a9c3a5f1",
+        "943f36fd309fb5ea67a82f577433f4ed3bc877e5b00f9b874e2f8b7f72bf0bdc"
+      ]
+    },
+    {
+      "name": "byteorder-lite",
+      "version": "0.1.0",
+      "license": "Unlicense OR MIT",
+      "crateSha256": "8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495",
+      "noticeRefs": [
+        "154c1af2b38e25e5c18613dfe352eed29b0863cb39e494007822cdeb39150ac5"
+      ]
+    },
+    {
+      "name": "bytes",
+      "version": "1.12.1",
+      "license": "MIT",
+      "crateSha256": "fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04",
+      "noticeRefs": [
+        "51f778ffff2c0705f0392f4202c932c7c93124850ced31abb7eef1e937da42c4"
+      ]
+    },
+    {
+      "name": "cc",
+      "version": "1.4.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "54413ede23c2daf518f35156dfde027feb2374004d63bd497f983c8db9c0e313",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "chacha20",
+      "version": "0.10.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "65c35e4b699c7e15ccbe7ee35c005e4fc0a278d22238a2857e6ce2dadeda1b06",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "1038b7737a0a04bd9268bbb8d17ee4e13c9bb3cf36f39da46c3a1818c798aa20"
+      ]
+    },
+    {
+      "name": "chrono",
+      "version": "0.4.45",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1aa79e62e7697b8e29b513a68abacf485adcd1fe8284a4316c5ae868e6633327",
+      "noticeRefs": [
+        "ce4a94c006fa5d157d196768fdba0b21d26f58e5599e8fccfa9ea374433e4ece"
+      ]
+    },
+    {
+      "name": "clap",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+      "noticeRefs": [
+        "9b689eac99cd74074238eacc6355aa7f26971ad99fcef4a2fa0fdb1c80407a3a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "clap_builder",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+      "noticeRefs": [
+        "9b689eac99cd74074238eacc6355aa7f26971ad99fcef4a2fa0fdb1c80407a3a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "clap_derive",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f9c751b79415d4e559e3d1fcf128e09e720eb673a06d26cf6f392d37d75b66e0",
+      "noticeRefs": [
+        "9b689eac99cd74074238eacc6355aa7f26971ad99fcef4a2fa0fdb1c80407a3a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "clap_lex",
+      "version": "1.1.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+      "noticeRefs": [
+        "9b689eac99cd74074238eacc6355aa7f26971ad99fcef4a2fa0fdb1c80407a3a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "color_quant",
+      "version": "1.1.0",
+      "license": "MIT",
+      "crateSha256": "3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b",
+      "noticeRefs": [
+        "a24abca538cdcc16c56812aa37746897a98dc9258de0487ad0b312162792f95f"
+      ]
+    },
+    {
+      "name": "colorchoice",
+      "version": "1.0.5",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1d07550c9036bf2ae0c684c4297d503f838287c83c53686d05370d0e139ae570",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "const-oid",
+      "version": "0.10.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "a6ef517f0926dd24a1582492c791b6a4818a4d94e789a334894aa15b0d12f55c",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "ea753cf1e3ec3e02b9f8fdb7876d2a82e881209eb54fdb0df52997e3a14e40d7"
+      ]
+    },
+    {
+      "name": "cpufeatures",
+      "version": "0.3.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "5ca28b0ae3115b884660db4118d803791fd6756b6e88f39c0f3f7859060d7566",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "ea753cf1e3ec3e02b9f8fdb7876d2a82e881209eb54fdb0df52997e3a14e40d7"
+      ]
+    },
+    {
+      "name": "crc32fast",
+      "version": "1.5.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "01a7799fd6b852db0e61728dde9a204c423b44d689dbd432522543614b490e78",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "9599127e421e16595d107a20935532cdb97ff570fbb0b06ed3aa67b04d0185a2"
+      ]
+    },
+    {
+      "name": "crossbeam-deque",
+      "version": "0.8.8",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "622f3fc73690be383c7214310406f28a90e6edeadc3cea882f9d71e495b9711a",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "5a7d13c6710cdec29e74eb3172b80712049c34099ab7259661ada051fc90777b"
+      ]
+    },
+    {
+      "name": "crossbeam-epoch",
+      "version": "0.9.21",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "dc74980687109a3b14c72fd458107bf0baa1da1a1a805e178d15501ba9b86d9d",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "5a7d13c6710cdec29e74eb3172b80712049c34099ab7259661ada051fc90777b"
+      ]
+    },
+    {
+      "name": "crossbeam-utils",
+      "version": "0.8.23",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "a31eee39dddec8330830986fcd7625edb5a24ec90ea038215273bbc3adb08ac6",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "5a7d13c6710cdec29e74eb3172b80712049c34099ab7259661ada051fc90777b"
+      ]
+    },
+    {
+      "name": "crypto-common",
+      "version": "0.2.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ce6e4c961d6cd6c9a86db418387425e8bdeaf05b3c8bc1411e6dca4c252f1453",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "dec912e37f888cf7a524f9f132c5bbb07dc13e90b026e0eab25697e74a08ddbb"
+      ]
+    },
+    {
+      "name": "cvt",
+      "version": "0.1.2",
+      "license": "Apache-2.0",
+      "crateSha256": "d2ae9bf77fbf2d39ef573205d554d87e86c12f1994e9ea335b0651b9b278bcf1",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b"
+      ]
+    },
+    {
+      "name": "deranged",
+      "version": "0.5.8",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "7cd812cc2bc1d69d4764bd80df88b4317eaef9e773c75226407d9bc0876b211c",
+      "noticeRefs": [
+        "b4839ecf405b5fa4a20f234ae6b686ab7f245e7eec8eb634174b833ea86a4653",
+        "1b66e3be6894b377a3b48201fbe33aab04c6a214f09309100a532b70ed497687"
+      ]
+    },
+    {
+      "name": "derivative",
+      "version": "2.2.0",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "fcc3dd5e9e9c0b295d6e1e4d811fb6f157d5ffd784b8d202fc62eac8035a770b",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "9b5c8351cd9446a7fd2d0bf0c9bf778c5572b858e9e22e90ff77c743040bca63"
+      ]
+    },
+    {
+      "name": "digest",
+      "version": "0.11.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f1dd6dbb5841937940781866fa1281a1ff7bd3bf827091440879f9994983d5c2",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "c8d7f4fd612a2da8e6688d4f93aa4cf298d6423fd86df22d9db03935e56abcd6"
+      ]
+    },
+    {
+      "name": "displaydoc",
+      "version": "0.2.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "c6232dd377dcc64799954cbd3a9bb882e9cdc1308ccd87b1c098f1fb2eaf82a8",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "document-features",
+      "version": "0.2.12",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "d4b8a88685455ed29a21542a33abd9cb6510b6b129abadabdcef0f4c55bc8f61",
+      "noticeRefs": [
+        "c274f80372d90c012937370f0e1f15087d22e308ef98b27cea5dc0d2d088366c",
+        "431b0387e5dac54c5ac006f8fd3cc5df1bc6af23facdff10d82a2ead264ac253"
+      ]
+    },
+    {
+      "name": "either",
+      "version": "1.18.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "252afb9ae5eaa683babdc6a068b3f5726eb19e05070c731f9b2a23a7c3e8ed34",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "fdd1c2117bcf8157d1d013d0953c0a7e6e5fab73df9e36773cd77634428568eb"
+      ]
+    },
+    {
+      "name": "equivalent",
+      "version": "1.0.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "4428cd87371acbd49f9f6380125492cd1e89df621d2fd7f55e30a0891f96a433"
+      ]
+    },
+    {
+      "name": "fast_image_resize",
+      "version": "6.1.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "e9c50201dc184ba6553da1695aac20a042efffbe2d84542cee31917c86c3ab1e",
+      "noticeRefs": [
+        "d5046ab392c7818c8a2338911318d2b41ff4b4b978d19678b94a8cc895c65a6c",
+        "9cd8714c216d9bf75807df02006cd0afe49cd8f4a808da27b5135ed784d8f27f"
+      ]
+    },
+    {
+      "name": "fdeflate",
+      "version": "0.3.7",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1e6853b52649d4ac5c0bd02320cddc5ba956bdb407c4b75a2c6b75bf51500f8c",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "77949ead506e84e3ff5c31f784bdc17b6c4095d4102edae05dc5557ef6c61c8c"
+      ]
+    },
+    {
+      "name": "find-msvc-tools",
+      "version": "0.1.13",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ef25905e51abafe4dcea6c15fec58c57b601cdbd0ee53d22ea1d3016c587d39b",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "flate2",
+      "version": "1.1.10",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "6e634e2e0ebac1ee034020da1ca582e17ffe4e0f5e985823721e168928136dcb",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "1b7402ea003f3186c7365a26343794193828b67f2650bdbb75d5a4f588e56c7d"
+      ]
+    },
+    {
+      "name": "fluent",
+      "version": "0.17.0",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "8137a6d5a2c50d6b0ebfcb9aaa91a28154e0a70605f112d30cb0cd4a78670477",
+      "noticeRefs": [
+        "b362263cd5eacb8719af4ae73251fea6f832a955a6aa0a3f1165f6cc854e2f3b",
+        "3abbb1018df5a52b32170c5f0706e39109f43f12134e5fcc15a26c3a6d1b8b63"
+      ]
+    },
+    {
+      "name": "fluent-bundle",
+      "version": "0.16.0",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "01203cb8918f5711e73891b347816d932046f95f54207710bda99beaeb423bf4",
+      "noticeRefs": [
+        "b362263cd5eacb8719af4ae73251fea6f832a955a6aa0a3f1165f6cc854e2f3b",
+        "3abbb1018df5a52b32170c5f0706e39109f43f12134e5fcc15a26c3a6d1b8b63"
+      ]
+    },
+    {
+      "name": "fluent-langneg",
+      "version": "0.13.1",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "7eebbe59450baee8282d71676f3bfed5689aeab00b27545e83e5f14b1195e8b0",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "2ab194d8195c4ddc76ff7938ff4af1cdc3d5dd3cce36e24b7ab5425a66c3aa9a"
+      ]
+    },
+    {
+      "name": "fluent-langneg",
+      "version": "0.14.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "1d5439a5e4ef14dc761bfe1d6ecbc4ba6fd698814ee65e7e623fa85aa9348dcc",
+      "noticeRefs": [
+        "b362263cd5eacb8719af4ae73251fea6f832a955a6aa0a3f1165f6cc854e2f3b",
+        "2ab194d8195c4ddc76ff7938ff4af1cdc3d5dd3cce36e24b7ab5425a66c3aa9a"
+      ]
+    },
+    {
+      "name": "fluent-syntax",
+      "version": "0.12.0",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "54f0d287c53ffd184d04d8677f590f4ac5379785529e5e08b1c8083acdd5c198",
+      "noticeRefs": [
+        "b362263cd5eacb8719af4ae73251fea6f832a955a6aa0a3f1165f6cc854e2f3b",
+        "3abbb1018df5a52b32170c5f0706e39109f43f12134e5fcc15a26c3a6d1b8b63"
+      ]
+    },
+    {
+      "name": "form_urlencoded",
+      "version": "1.2.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "cb4cb245038516f5f85277875cdaa4f7d2c9a0fa0468de06ed190163b1581fcf",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "33ed9a8ecf556f161ec5d7e8761712f404d082bf9eeb8f6085d43517b5938be4"
+      ]
+    },
+    {
+      "name": "fs_at",
+      "version": "0.2.1",
+      "license": "Apache-2.0",
+      "crateSha256": "14af6c9694ea25db25baa2a1788703b9e7c6648dcaeeebeb98f7561b5384c036",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179"
+      ]
+    },
+    {
+      "name": "fs_extra",
+      "version": "1.3.0",
+      "license": "MIT",
+      "crateSha256": "42703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c",
+      "noticeRefs": [
+        "30158cc81738e8c8772149fd1348dfca17d097278678ea0fdc37ec3f3890fd7d"
+      ]
+    },
+    {
+      "name": "getrandom",
+      "version": "0.2.17",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ff2abc00be7fca6ebc474524697ae276ad847ad0a6b3faa4bcb027e9a4614ad0",
+      "noticeRefs": [
+        "e7330bf53074b4a9c5896f4a03d782be7f163381e45923d5e2369fe194a19f99",
+        "478d530cbce79fc122b1a7c067ad706b000ef79ae914a4d060195f0f23b4a50d"
+      ]
+    },
+    {
+      "name": "getrandom",
+      "version": "0.4.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099",
+      "noticeRefs": [
+        "e7330bf53074b4a9c5896f4a03d782be7f163381e45923d5e2369fe194a19f99",
+        "94b1870d380ccf537d5bdfda2de882965c9afb814acc375cb1b47fc1a0014ee3"
+      ]
+    },
+    {
+      "name": "gif",
+      "version": "0.14.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ee8cfcc411d9adbbaba82fb72661cc1bcca13e8bba98b364e62b2dba8f960159",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "1b6f7ab81ae259795889e8f3855879c6a4dd4435b664106416c8d69b74c20760"
+      ]
+    },
+    {
+      "name": "glob",
+      "version": "0.3.4",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "e4eba85ea1d0a966a983acd07deee566e67395d2d96b6fb39e62b5a833f1eb0b",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "hashbrown",
+      "version": "0.17.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "ae9791f02f2bbe0ce17b434753af97be6e5284b6f8e9f22db3c1f0f11b2e015a"
+      ]
+    },
+    {
+      "name": "heck",
+      "version": "0.5.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "033a9383ff21d1e4811d98dd2e0081b0ba0d9c9a31d6c7ba9e63e3488479bf29"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "1.5.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "918d3568bebf352712bc2ef3d46a8bcf1a75b373be6539de198e9105cbbf9ce0",
+      "noticeRefs": [
+        "881c9fe2d29b216aac4499364653fda35310c7212321b54dc4f8af51fa1d5d36",
+        "f47894ff9c86dc7e364e3c161a13b4b7414da6192b91d0eccf0161f944f753e5"
+      ]
+    },
+    {
+      "name": "httparse",
+      "version": "1.10.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "6dbf3de79e51f3d586ab4cb9d5c3e2c14aa28ed23d180cf89b4df0454a69cc87",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "8502803cebb30a728a7589325d3a9fa666d259013201558c1362d8900596a0de"
+      ]
+    },
+    {
+      "name": "hybrid-array",
+      "version": "0.4.15",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "27f864f10dfb56725ce5ce5472bc52252c8f93a4ab86327122cebf62c5f59a17",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "a1aa15c3898d79b739990fd6bdc2c0acb73410f8eea62de02d693633bf664193"
+      ]
+    },
+    {
+      "name": "icu_collections",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "fa68d21081c4a05d5a901a1c62add574c77048b6a1c67be3b50ce0b60d4ca513",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_locale_core",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "d56e28588da92eee5c3201a6eff33fabdd49b62269c8938d4ff050ce4d900deb",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_locid",
+      "version": "1.5.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "13acbb8371917fc971be86fc8057c41a64b521c184808a698c02acc242dbf637",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_locid_transform",
+      "version": "1.5.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "01d11ac35de8e40fdeda00d9e1e9d92525f3f9d887cdd7aa81d727596788b54e",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_locid_transform_data",
+      "version": "1.5.1",
+      "license": "Unicode-3.0",
+      "crateSha256": "7515e6d781098bf9f7205ab3fc7e9709d34554ae0b21ddbcb5febfa4bc7df11d",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_normalizer",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "12f9cf5f235641ed274641dd81c3f28d870e276763d0797aeeab72317b1c646f",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_normalizer_data",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "1563da1ed3e0b3bf3d74c9b85917ac9c56464d2f57242270c09c9e752f8021a0",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_properties",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "7e7ca276ad3145661a65914e6daf131ca5120cd3dcee8f8f3214b8875184a148",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_properties_data",
+      "version": "2.3.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "e590f038c1464a96894fd6d10127e90a8be4509f56ff7ecef851b15cee0b7caa",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_provider",
+      "version": "1.5.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "6ed421c8a8ef78d3e2dbc98a973be2f3770cb42b606e3ab18d6237c4dfde68d9",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_provider",
+      "version": "2.3.1",
+      "license": "Unicode-3.0",
+      "crateSha256": "d27bbb9d3abbefac45d55f647c9de1d44aafcd1186eb91879afef17c396c3e73",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "icu_provider_macros",
+      "version": "1.5.0",
+      "license": "Unicode-3.0",
+      "crateSha256": "1ec89e9337638ecdc08744df490b221a7399bf8d164eb52a665454e60e075ad6",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "1.1.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "3b0875f23caa03898994f6ddc501886a45c7d3d62d04d2d90788d47be1b1e4de",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "7a8093fb4a93f23e2bc9081b53b6187ea14a1c9303e513184726d8cdcbfa418a"
+      ]
+    },
+    {
+      "name": "idna_adapter",
+      "version": "1.2.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "cb68373c0d6620ef8105e855e7745e18b0d00d3bdb07fb532e434244cdb9a714",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "0d8a0aecbcbaf0573dea8de966d252874fa4b99f3e1650976dc8a0a2fc062c71"
+      ]
+    },
+    {
+      "name": "image",
+      "version": "0.25.10",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "85ab80394333c02fe689eaf900ab500fbd0c2213da414687ebf995a65d5a6104",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "77949ead506e84e3ff5c31f784bdc17b6c4095d4102edae05dc5557ef6c61c8c"
+      ]
+    },
+    {
+      "name": "indexmap",
+      "version": "2.14.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "cc4e190f5d26ca7051642629da2c52fc03bde85a03197c99408dcd291734c855",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "4f2ac128e429d9646bf481baaa120eb561234f980503d337c710c06d0af6bbf9"
+      ]
+    },
+    {
+      "name": "intl-memoizer",
+      "version": "0.5.3",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "310da2e345f5eb861e7a07ee182262e94975051db9e4223e909ba90f392f163f",
+      "noticeRefs": [
+        "b362263cd5eacb8719af4ae73251fea6f832a955a6aa0a3f1165f6cc854e2f3b",
+        "3abbb1018df5a52b32170c5f0706e39109f43f12134e5fcc15a26c3a6d1b8b63"
+      ]
+    },
+    {
+      "name": "intl_pluralrules",
+      "version": "7.0.2",
+      "license": "Apache-2.0/MIT",
+      "crateSha256": "078ea7b7c29a2b4df841a7f6ac8775ff6074020c6776d48491ce2268e068f972",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179"
+      ]
+    },
+    {
+      "name": "is_terminal_polyfill",
+      "version": "1.70.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "itoa",
+      "version": "1.0.18",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "jobserver",
+      "version": "0.1.35",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1c00acbd29eabad4a2392fa0e921c874934dbbf4194312ad20f04a0ed67a3cb3",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "lazy_static",
+      "version": "1.5.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "9e0027807b0c548ac1df1bd85fe0d72da6665498b06ebf8a64d5cb841f39fcef"
+      ]
+    },
+    {
+      "name": "libc",
+      "version": "0.2.189",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "c96302294382bf166f3963bdbce0760aa2b9f0abaa2a7bdb296de7a1c7b51867"
+      ]
+    },
+    {
+      "name": "libloading",
+      "version": "0.9.0",
+      "license": "ISC",
+      "crateSha256": "754ca22de805bb5744484a5b151a9e1a8e837d5dc232c2d7d8c2e3492edc8b60",
+      "noticeRefs": [
+        "bbf1ea3140c4d068c74adfcd77c4a8538d51b5027b5cd246896511d2314c12a6"
+      ]
+    },
+    {
+      "name": "litemap",
+      "version": "0.7.5",
+      "license": "Unicode-3.0",
+      "crateSha256": "23fb14cb19457329c82206317a5663005a4d404783dc74f4252769b0d5f42856",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "litemap",
+      "version": "0.8.3",
+      "license": "Unicode-3.0",
+      "crateSha256": "47d9d19d1d6efa0109d2f65ff4c85cddd50bd572e5a00127ab10987290bcefae",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "litrs",
+      "version": "1.0.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "11d3d7f243d5c5a8b9bb5d6dd2b1602c0cb0b9db1621bafc7ed66e35ff9fe092",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "da6604db16c0e6f84d6f59847f236910d450d25381d272f26d1d0e6315d7c0d2"
+      ]
+    },
+    {
+      "name": "log",
+      "version": "0.4.34",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f9f8bd3e56ce4dfc153cf470fffbfa98c7620958b312ca5c3a4b8d5181fd13c6",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "log-panics",
+      "version": "2.1.0",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "68f9dd8546191c1850ecf67d22f5ff00a935b890d0e84713159a55495cc2ac5f",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "c440f85f6ea49bb109d243e58e3939f124c692f72ef9b7077548482cda56bed5"
+      ]
+    },
+    {
+      "name": "memchr",
+      "version": "2.8.3",
+      "license": "Unlicense OR MIT",
+      "crateSha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "154c1af2b38e25e5c18613dfe352eed29b0863cb39e494007822cdeb39150ac5"
+      ]
+    },
+    {
+      "name": "memmap2",
+      "version": "0.9.11",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "d1219ed1b7f229ee7104d281dd01d6802fe28bb6e95d292942c4daacdeb798c0",
+      "noticeRefs": [
+        "b733dbc79d3d600997bfe6891153f39fcdb27d753b608dfbbcdfd6be8f9efb64",
+        "c18ee669bac9b829ddeabe40d603bcf89e22daaf339a44b7a9846079eeea1d93"
+      ]
+    },
+    {
+      "name": "miniz_oxide",
+      "version": "0.8.9",
+      "license": "MIT OR Zlib OR Apache-2.0",
+      "crateSha256": "1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316",
+      "noticeRefs": [
+        "7427abc630365f6335b3ced8b620b6c8a87b3793edea701d15cdde01ec7a6cde",
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "ac9859ce4e9a80a4846ee0b453981427f4fc2ba9ac7d0e568de61ab80a53d86d",
+        "eac3911cc3d41ffb7de705edeec755d3f83189b61839389cc9079acb54d8c5af"
+      ]
+    },
+    {
+      "name": "miniz_oxide",
+      "version": "0.9.1",
+      "license": "MIT OR Zlib OR Apache-2.0",
+      "crateSha256": "b63fbc4a50860e98e7b2aa7804ded1db5cbc3aff9193adaff57a6931bf7c4b4c",
+      "noticeRefs": [
+        "7427abc630365f6335b3ced8b620b6c8a87b3793edea701d15cdde01ec7a6cde",
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "ac9859ce4e9a80a4846ee0b453981427f4fc2ba9ac7d0e568de61ab80a53d86d",
+        "eac3911cc3d41ffb7de705edeec755d3f83189b61839389cc9079acb54d8c5af"
+      ]
+    },
+    {
+      "name": "moxcms",
+      "version": "0.8.1",
+      "license": "BSD-3-Clause OR Apache-2.0",
+      "crateSha256": "bb85c154ba489f01b25c0d36ae69a87e4a1c73a72631fc6c0eb6dde34a73e44b",
+      "noticeRefs": [
+        "836a9c1227c6446925bee567ecfbcd4620780b4cc020c2c6019ba4b8d1295520",
+        "2aa92cada6431e75615e3fe6cb1a9082c98f777d48ae1c087c0da0e37f7b8bff"
+      ]
+    },
+    {
+      "name": "normpath",
+      "version": "1.5.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "b11ce00d2594068e8a27c9146fdc5cf9f3ac38eb42c7cd34d05fea618873ac9f",
+      "noticeRefs": [
+        "36c45b254e2651e066141386c729d90d736fe4697a67e73e6db65478789e0900",
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "40096e6aac8e35c72a3f41afe7f342df1e8b24988f37154d0033d44c21ddd804",
+        "9bf5245cd90d79960f5ec8a79907620f0f74898a4cdd7d2c82ab06a9f88a7998"
+      ]
+    },
+    {
+      "name": "num-conv",
+      "version": "0.2.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "521739c6d2bac4aa25192232afe6841231376b2b26d4d9fae5ecf8ca5772e441",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "4d83b119f786daf6af23876c0861ffb53f624b6086424c511e608b2025370a2d"
+      ]
+    },
+    {
+      "name": "num-traits",
+      "version": "0.2.19",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "once_cell",
+      "version": "1.21.4",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "once_cell_polyfill",
+      "version": "1.70.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "4498464c2864825d7bb4c83e2ac4e9dbb533d49964fbf218c24f8d44ee4e87a9"
+      ]
+    },
+    {
+      "name": "oneshot",
+      "version": "0.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "cfe21416a02c693fb9f980befcb230ecc70b0b3d1cc4abf88b9675c4c1457f0c",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "os_info",
+      "version": "3.15.0",
+      "license": "MIT",
+      "crateSha256": "9cf20a545b305cf1da722b236b5155c9bb35f1d5ceb28c048bd96ca842f41b5b",
+      "noticeRefs": [
+        "7e22e7cd28d87c17031597a16b49970a28d7cbef48df84e32e83fcb17c82a5ac"
+      ]
+    },
+    {
+      "name": "percent-encoding",
+      "version": "2.3.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "7a8093fb4a93f23e2bc9081b53b6187ea14a1c9303e513184726d8cdcbfa418a"
+      ]
+    },
+    {
+      "name": "pkg-config",
+      "version": "0.3.34",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "png",
+      "version": "0.18.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "60769b8b31b2a9f263dae2776c37b1b28ae246943cf719eb6946a1db05128a61",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "80cdd90699e446abbe50d005e6c4de2a827a5f6dce34deacce04900c7a825ecf"
+      ]
+    },
+    {
+      "name": "potential_utf",
+      "version": "0.1.6",
+      "license": "Unicode-3.0",
+      "crateSha256": "d83eb9bc6d8e5cf568e7a1101d60ee05e81ed50ea106026f3d18deeb046d7661",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "powerfmt",
+      "version": "0.2.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391",
+      "noticeRefs": [
+        "4b05c4b43039d82b9ef8f3fb6cbf97f8312485eb9e6546a8171b37b73e048b08",
+        "6e972f314e81b300c51ebacaddfea1799bbf661b6c65decc4db677ce49483c9e"
+      ]
+    },
+    {
+      "name": "pretty-bytes-rust",
+      "version": "0.3.0",
+      "license": "Apache-2.0",
+      "crateSha256": "fe9cf90f159a57d064a311cfcc6d65f189c12bf399080a7dd2b64de47181639b",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b"
+      ]
+    },
+    {
+      "name": "proc-macro2",
+      "version": "1.0.107",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "progress-streams",
+      "version": "1.1.0",
+      "license": "MIT",
+      "crateSha256": "e965d96c8162c607b0cd8d66047ad3c9fd35273c134d994327882c6e47f986a7",
+      "noticeRefs": [
+        "1baf896909e14e42cefce494ad49e270b0516237cb61aa5d14b6ea27856f3a82"
+      ]
+    },
+    {
+      "name": "pxfm",
+      "version": "0.1.30",
+      "license": "BSD-3-Clause OR Apache-2.0",
+      "crateSha256": "d55d956fa96f5ec02be2e13af0e20391a5aa83d6a074e3ad368959d0fab299ea",
+      "noticeRefs": [
+        "836a9c1227c6446925bee567ecfbcd4620780b4cc020c2c6019ba4b8d1295520",
+        "2aa92cada6431e75615e3fe6cb1a9082c98f777d48ae1c087c0da0e37f7b8bff"
+      ]
+    },
+    {
+      "name": "quote",
+      "version": "1.0.47",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "rand",
+      "version": "0.10.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "65c9fb96cbc91e3478eaae79a69fcd3f1ae4ad052e471fe6732fff548984b4af",
+      "noticeRefs": [
+        "2411d70acb18e15ac32f7aace439a5c2725b8d0074510caf651d4c270d7c05aa",
+        "fee4d7ce394c9161daabd2797e22d8d5ed80ea3c0f4524b242ab22582d2cc412",
+        "cc367a7134c2b07d995a2f8dea591094a1d100e49c68513f729fdf3eaf580a21"
+      ]
+    },
+    {
+      "name": "rand_core",
+      "version": "0.10.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "63b8176103e19a2643978565ca18b50549f6101881c443590420e4dc998a3c69",
+      "noticeRefs": [
+        "c9027c55c9307b0cc5252b75c7bb74bb8fbf7270c881fa3a0a745ef742568156",
+        "179c83ef07a51414e7fb13941958470bbd43c072efbe9635951ebcd7583ae5d5",
+        "704f0e5f1c8486094f9b08e23ff0955c895dcee8d7de7390beafcad46b5dc4d5"
+      ]
+    },
+    {
+      "name": "rayon",
+      "version": "1.12.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "fb39b166781f92d482534ef4b4b1b2568f42613b53e5b6c160e24cfbfa30926d",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "9e0027807b0c548ac1df1bd85fe0d72da6665498b06ebf8a64d5cb841f39fcef"
+      ]
+    },
+    {
+      "name": "rayon-core",
+      "version": "1.13.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "22e18b0f0062d30d4230b2e85ff77fdfe4326feb054b9783a3460d8435c8ab91",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "9e0027807b0c548ac1df1bd85fe0d72da6665498b06ebf8a64d5cb841f39fcef"
+      ]
+    },
+    {
+      "name": "regex",
+      "version": "1.13.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f020237b6c8eed93db2e2cb53c00c60a8e1bc73da7d073199a1180401450218d",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "regex-automata",
+      "version": "0.4.18",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ad8553b9b26413251cbf30e620595c7a41b3887f03da04579c0e6b0d6a06b4b2",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "regex-syntax",
+      "version": "0.8.11",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90",
+        "ea8df489e83b7674d5c9d50c320bec3b15d2e2eeb7a3a8879a666d91e5640c16"
+      ]
+    },
+    {
+      "name": "remove_dir_all",
+      "version": "1.0.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "808cc0b475acf76adf36f08ca49429b12aad9f678cb56143d5b3cb49b9a1dd08",
+      "noticeRefs": [
+        "7ae2ac95bc69025caf7e306952462b60cd238fa5ad3ef0acc9c9b402335d8f66",
+        "a10803ea8dfc1f1b0e38a899b3bbe909d73743ec27b71486eea4257bbf01ef0d"
+      ]
+    },
+    {
+      "name": "ring",
+      "version": "0.17.14",
+      "license": "Apache-2.0 AND ISC",
+      "crateSha256": "a4689e6c2294d81e88dc6261c768b63bc4fcdb852be6d1352498b114f61383b7",
+      "noticeRefs": [
+        "edb9c6dbff4676b90e729ffdb6c9239076a2e01b3bb8aadf080bdc7a682296da",
+        "473867fcf89f75954018ee72124015779a1b9ca0d1a33328f2ddcf538690c067",
+        "07414b6c33f30acfd5e0dda512e77ddbeb9f8a37290568fd056a01a0b50244c1",
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "740a360e4d9c99a258a4a870097a4641af896babd62ca7ab2a2c6de4d5ada151",
+        "f1954d2b51ee6ac825defdc6ee947930241269d40ad6082b9d9e758613ce7b61"
+      ]
+    },
+    {
+      "name": "rustc-hash",
+      "version": "2.1.3",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "6b1e7f9a428571be2dc5bc0505c13fb6bf936822b894ec87abf8a08a4e51742d",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "rustls",
+      "version": "0.23.45",
+      "license": "Apache-2.0 OR ISC OR MIT",
+      "crateSha256": "0d41d731c7d2f962d1ccc364cec258de3c0e93b38c2fb3ba97ac74513048d634",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "af6da3f3f6b4929e02f81fd890835fd6d70ffddae12a8d735c0d7f294ac5ffd7",
+        "a3320aa8d192a02cc2c9f31ebcceb861d71b737acdff1397d0d8a49361e86e73"
+      ]
+    },
+    {
+      "name": "rustls-pki-types",
+      "version": "1.15.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "2f4925028c7eb5d1fcdaf196971378ed9d2c1c4efc7dc5d011256f76c99c0a96",
+      "noticeRefs": [
+        "430e912c26cec30cdf52f4367b6d15dd3f898d2a19db349a62a9f3095ca98a5b",
+        "c5e7f780f961f850c7ac6e80e29b6aa3e5c3a503677eb7b7a9826fc6d735eb2e"
+      ]
+    },
+    {
+      "name": "rustls-webpki",
+      "version": "0.103.15",
+      "license": "ISC",
+      "crateSha256": "f3c3cf1d8b1e7d4927e2d154c3fcb02979afb9939629c62cd9048d4f07b60ac2",
+      "noticeRefs": [
+        "3ac27594ed56fd079c95a71f8beabc498c5b997ec31e91f4a18e59a5974adb2a"
+      ]
+    },
+    {
+      "name": "same-file",
+      "version": "1.0.6",
+      "license": "Unlicense/MIT",
+      "crateSha256": "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "739620ea44ad8f99e96ea272e583b63a7d44a83a71250d7550b2544ea6b49fbf"
+      ]
+    },
+    {
+      "name": "self_cell",
+      "version": "1.3.0",
+      "license": "Apache-2.0 OR GPL-2.0-only",
+      "crateSha256": "2ab42ca02749e120097e328d91d415325bdf43b1c72c4c8badf37375fe40a813",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "1be990a929b50ca91d815cea1cd3cebb5c49e86076ade82b1103f2b9cd71a3af"
+      ]
+    },
+    {
+      "name": "semver",
+      "version": "1.0.28",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "8a7852d02fc848982e0c167ef163aaff9cd91dc640ba85e263cb1ce46fae51cd",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "serde",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "serde_core",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "serde_derive",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "serde_json",
+      "version": "1.0.151",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "c841b55ecdae098c80dcae9cf767f6f8a0c2cdb3416bbef72181df4d0fe73f14",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "sha1",
+      "version": "0.11.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "aacc4cc499359472b4abe1bf11d0b12e688af9a805fa5e3016f9a386dc2d0214",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "535a6aa345e8622e7a5cfd384e0c812d67f9c8f8f49f8b8369565fcb98c547fe"
+      ]
+    },
+    {
+      "name": "sha1_smol",
+      "version": "1.0.1",
+      "license": "BSD-3-Clause",
+      "crateSha256": "bbfa15b3dddfee50a0fff136974b3e1bde555604ba463834a7eb7deb6417705d",
+      "noticeRefs": [
+        "bce2075de4988ee2f552d27ef421bfb088a1bffcf5ca6b9f43dabb39c4110b82",
+        "f7f7242d53ebc81184772c3403964a90a28328585ba968881e13ff4c82cf34e6"
+      ]
+    },
+    {
+      "name": "sha2",
+      "version": "0.11.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "446ba717509524cb3f22f17ecc096f10f4822d76ab5c0b9822c5f9c284e825f4",
+      "noticeRefs": [
+        "e8541ea93f027a6c2cf077362f74492bdf0bb8354f63029962d84f1c130937a4",
+        "535a6aa345e8622e7a5cfd384e0c812d67f9c8f8f49f8b8369565fcb98c547fe"
+      ]
+    },
+    {
+      "name": "shlex",
+      "version": "2.0.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba",
+      "noticeRefs": [
+        "a759ce38c686a2042f62a0a6b8ea01781e3447726dcb68f4bb8b9f199feff12e",
+        "cc5ba5589dfb7bbc1545df0cd433427aac08b1cdf3484161d6785996317b8c3c"
+      ]
+    },
+    {
+      "name": "simd-adler32",
+      "version": "0.3.10",
+      "license": "MIT",
+      "crateSha256": "3a219298ac11a56ea9a6d2120044824d6f01aeb034955e7af7bc16858527deea",
+      "noticeRefs": [
+        "627eff66d6c4b984355e737e8a92b262d584865956e93a1ece6e285a083d8be9"
+      ]
+    },
+    {
+      "name": "simple-stopwatch",
+      "version": "0.1.4",
+      "license": "MIT",
+      "crateSha256": "ea0b3bc19fbfbbc5823eb4f9f52a94f98a97f7b265e96defe319dfdac9692b51",
+      "noticeRefs": [
+        "f03ab2bbc382d6352d73d6e7b5f642637f53bb3da889145d9ec5ff9710cb3274"
+      ]
+    },
+    {
+      "name": "simplelog",
+      "version": "0.12.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "16257adbfaef1ee58b1363bdc0664c9b8e1e30aed86049635fb5f147d065a9c0",
+      "noticeRefs": [
+        "65b227aa465ebc6c4ec5896082477f81c24ccf25fcdd2472ef1001ddd50e0b3b",
+        "6b93ed3d636710cd6bd1ca467929b0c53f533cb110c8349557ee3bf69f1096b2"
+      ]
+    },
+    {
+      "name": "smallvec",
+      "version": "1.16.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ba467056f1b547ed52077911161fc86985becbc60e8e1857c8a144dab0def891",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "7f194ae45c2525a57443f7edabd392e8218109ee81a4bce70d385104c87c1a71"
+      ]
+    },
+    {
+      "name": "stable_deref_trait",
+      "version": "1.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "5e05b024f653a5ce199e77cbbbd42fb5553562ec714b819421ed0c3e552a75d7"
+      ]
+    },
+    {
+      "name": "strsim",
+      "version": "0.11.1",
+      "license": "MIT",
+      "crateSha256": "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f",
+      "noticeRefs": [
+        "8fd8980cab8977a58aecdb4c48857aa6b70a64250cc923b3eeb0ecd903c51def"
+      ]
+    },
+    {
+      "name": "strum",
+      "version": "0.28.0",
+      "license": "MIT",
+      "crateSha256": "9628de9b8791db39ceda2b119bbe13134770b56c138ec1d3af810d045c04f9bd",
+      "noticeRefs": [
+        "26da0e99dd332e7626ce0ee45de06548670992e7e321f7edaf17c0b48f126ac7"
+      ]
+    },
+    {
+      "name": "strum_macros",
+      "version": "0.28.0",
+      "license": "MIT",
+      "crateSha256": "ab85eea0270ee17587ed4156089e10b9e6880ee688791d45a905f5b1ca36f664",
+      "noticeRefs": [
+        "26da0e99dd332e7626ce0ee45de06548670992e7e321f7edaf17c0b48f126ac7"
+      ]
+    },
+    {
+      "name": "subtle",
+      "version": "2.6.1",
+      "license": "BSD-3-Clause",
+      "crateSha256": "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292",
+      "noticeRefs": [
+        "24fa06d8eae3c3ba93e1f863f0640ef57c8996f4bece3e14c3d29c5efb7c0089"
+      ]
+    },
+    {
+      "name": "syn",
+      "version": "1.0.109",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "syn",
+      "version": "2.0.119",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "syn",
+      "version": "3.0.6",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "8593e8e72159ed2257d083c7a454a85cbf854f37a0966d8d483aff8c8a3ebcee",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "synstructure",
+      "version": "0.13.2",
+      "license": "MIT",
+      "crateSha256": "728a70f3dbaf5bab7f0c4b1ac8d7ae5ea60a4b5549c8a5914361c99147a709d2",
+      "noticeRefs": [
+        "3a036676ec8c0dba1c24b96f83595456280b7a754ddee64585dd8048ed2b087f"
+      ]
+    },
+    {
+      "name": "synstructure",
+      "version": "0.14.0",
+      "license": "MIT",
+      "crateSha256": "901704edd0dfe137f1987838ee4f259e4e063c31371bdb423f7ae38ec6f77f02",
+      "noticeRefs": [
+        "3a036676ec8c0dba1c24b96f83595456280b7a754ddee64585dd8048ed2b087f"
+      ]
+    },
+    {
+      "name": "sys-locale",
+      "version": "0.3.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "8eab9a99a024a169fe8a903cf9d4a3b3601109bcc13bd9e3c6fff259138626c4",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "29243dcc52a7e76cca2daf8afa4ec94faa73261aa155a67b53a90d3a6a270a18"
+      ]
+    },
+    {
+      "name": "termcolor",
+      "version": "1.4.1",
+      "license": "Unlicense OR MIT",
+      "crateSha256": "06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "154c1af2b38e25e5c18613dfe352eed29b0863cb39e494007822cdeb39150ac5"
+      ]
+    },
+    {
+      "name": "thiserror",
+      "version": "2.0.20",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ec86235f5fcc2a73650310756d2ac5b138a5780bbbdfae3eeccec992c435ba4f",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "thiserror-impl",
+      "version": "2.0.20",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "bc04cd3e1236dd4a98afca4569f2deb3f120e5422a4023be2cb683f8486292af",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "time",
+      "version": "0.1.45",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "1b797afad3f312d1c66a56d11d0316f916356d11bd158fbc6ca6389ff6bf805a",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "14435fbcd271e2783f721b57b7bf4f6502c1379249a4300e0e5bb774686c2d90"
+      ]
+    },
+    {
+      "name": "time",
+      "version": "0.3.55",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "cdb87b95ec50ddfa440816d227a17b2ccbdda963a316a727fda0fc4334f7d134",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "7fdbca77dec6709aaa7ce778f43f3e8c5c860302c029f989dddc141bb036c87a"
+      ]
+    },
+    {
+      "name": "time-core",
+      "version": "0.1.9",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "9e1c906769ad99c88eaa54e728060edef082f8e358ff32030cb7c7d315e81109",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "7fdbca77dec6709aaa7ce778f43f3e8c5c860302c029f989dddc141bb036c87a"
+      ]
+    },
+    {
+      "name": "time-macros",
+      "version": "0.2.32",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "7e689342a48d2ea927c87ea50cabf8594854bf940e9310208848d680d668ed85",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "7fdbca77dec6709aaa7ce778f43f3e8c5c860302c029f989dddc141bb036c87a"
+      ]
+    },
+    {
+      "name": "tinystr",
+      "version": "0.7.6",
+      "license": "Unicode-3.0",
+      "crateSha256": "9117f5d4db391c1cf6927e7bea3db74b9a1c1add8f7eda9ffd5364f40f57b82f",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "tinystr",
+      "version": "0.8.4",
+      "license": "Unicode-3.0",
+      "crateSha256": "b1e27c91459209c2986af3dcf603a5a74a4368754ce37414f59acc971167f643",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "toml",
+      "version": "0.5.11",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "f4f7f0dd8d50a853a531c426359045b1998f04219d88799810762cd4ad314234",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "type-map",
+      "version": "0.5.1",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "cb30dbbd9036155e74adad6812e9898d03ec374946234fbcebd5dfc7b9187b90",
+      "noticeRefs": [
+        "c0867657d24d14df791059b248860e8be672844af784e8c02bd9f5ab78685b78",
+        "6e9587a31f8b4a064ace93efa00c5c8612faccb68da790e728fcb3851973749b"
+      ]
+    },
+    {
+      "name": "typed-path",
+      "version": "0.12.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "8e28f89b80c87b8fb0cf04ab448d5dd0dd0ade2f8891bae878de66a75a28600e",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "typenum",
+      "version": "1.20.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+      "noticeRefs": [
+        "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a",
+        "65dc2a869ff7fe71d6c062f9f0977b0274e109e0a407fa4eea2570063902c2e7",
+        "87ebb37988efc3285a41635c6a9fd38147e1e581b5f0556a284d5ab8fa5cdd4c"
+      ]
+    },
+    {
+      "name": "unic-langid",
+      "version": "0.9.6",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "a28ba52c9b05311f4f6e62d5d9d46f094bd6e84cb8df7b3ef952748d752a7d05",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "unic-langid-impl",
+      "version": "0.9.6",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "dce1bf08044d4b7a94028c93786f8566047edc11110595914de93362559bc658",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "unicode-ident",
+      "version": "1.0.26",
+      "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "crateSha256": "d245f478577f809a851594d02313b640fb437e0bb33866753cff937863096954",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652",
+        "361d7912957842f2ce61c774b14afba41ae91df84882982e6f7e749e01c07c91"
+      ]
+    },
+    {
+      "name": "untrusted",
+      "version": "0.9.0",
+      "license": "ISC",
+      "crateSha256": "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1",
+      "noticeRefs": [
+        "a1fff344297822d3e229f6943007694a29e6bede5b83349cb7c39117f4302e3c"
+      ]
+    },
+    {
+      "name": "ureq",
+      "version": "3.4.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "9a7ac20be9b7726e0bbdbf974c059676d9acb1cd414961f570a4e8231cacd7fc",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "299aa079a48535e7a67c56a5333afc355dd50bbea1769c0ec4572f094c26bb87"
+      ]
+    },
+    {
+      "name": "ureq-proto",
+      "version": "0.6.4",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f86fd172ccca569e458f61b6bdd6220965a9ef36e672a6852953b51a0e1583be",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "bdcf37a4554aff6459fa3b548273030a8d278f4d657f5258c11858b976034cc9"
+      ]
+    },
+    {
+      "name": "url",
+      "version": "2.5.8",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ff67a8a4397373c3ef660812acab3268222035010ab8680ec4215f38ba3d0eed",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "7a8093fb4a93f23e2bc9081b53b6187ea14a1c9303e513184726d8cdcbfa418a"
+      ]
+    },
+    {
+      "name": "utf8-zero",
+      "version": "0.8.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "b8c0a043c9540bae7c578c88f91dda8bd82e59ae27c21baca69c8b191aaf5a6e",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "utf8_iter",
+      "version": "1.0.4",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be",
+      "noticeRefs": [
+        "76c0e37c107dd35a99628d1c9817a685668b89d1c2a465d0d898bacd7eb94475",
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "7dc2f64024477c92b147ae4a93bbcef90031b33ba0de6a84bd570d59e6c0688b"
+      ]
+    },
+    {
+      "name": "utf8parse",
+      "version": "0.2.2",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821",
+      "noticeRefs": [
+        "85ad950cce8752f716dbf49be95b2639172cb49f291336d57f1fdc9989e38179",
+        "db2c904eb5685e69d3ea20f1f8187c8ed82b44077221fd99c4a68234739de941"
+      ]
+    },
+    {
+      "name": "uuid",
+      "version": "1.26.1",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "2ef6dac1e96601b4fb3acccccff2139741fcb757cb9a36089bf5be91cfb285ce",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "11cd7e6caed4b2377bdc3a08deb5a565efb76f0d747cfb2e26c7f7c1f6302e54"
+      ]
+    },
+    {
+      "name": "wait-timeout",
+      "version": "0.2.1",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "09ac3b126d3914f9849036f826e054cbabdc8519970b8998ddaf3b5bd3c65f11",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "84e1bbfebd74e4196cfa0ea5cf58e677aa24b47c6661adbb19fb07920d089d1d"
+      ]
+    },
+    {
+      "name": "walkdir",
+      "version": "2.5.0",
+      "license": "Unlicense/MIT",
+      "crateSha256": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "154c1af2b38e25e5c18613dfe352eed29b0863cb39e494007822cdeb39150ac5"
+      ]
+    },
+    {
+      "name": "webpki-roots",
+      "version": "1.0.9",
+      "license": "CDLA-Permissive-2.0",
+      "crateSha256": "7dcd9d09a39985f5344844e66b0c530a33843579125f23e21e9f0f220850f22a",
+      "noticeRefs": [
+        "d30183ec6610abca89d6095d5f1dc56ea50248a1001cbb4549fadc3a582f6f9a"
+      ]
+    },
+    {
+      "name": "weezl",
+      "version": "0.1.12",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "a28ac98ddc8b9274cb41bb4d9d4d5c425b6020c50c46f25559911905610b4a88",
+      "noticeRefs": [
+        "954f335b8baf5e1a5748b3a1bf6eeb2ec0b28ae19813f02063d64be005765a76",
+        "603c83c4c200b7a9119c10f2e9f793d7f67a7b982682fd86a646f167a5e96efb"
+      ]
+    },
+    {
+      "name": "widestring",
+      "version": "1.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "72069c3113ab32ab29e5584db3c6ec55d416895e60715417b5b883a357c3e471",
+      "noticeRefs": [
+        "4bf96504d6e83ce5c6fc7167f1795d9ceaa68e70ab86bc5d08ab93184262bbbe",
+        "1847e0e0698142ed4347c1441a9fa81c8fbddd44b1d8bbcd5e3647f991759d7f"
+      ]
+    },
+    {
+      "name": "winapi",
+      "version": "0.3.9",
+      "license": "MIT/Apache-2.0",
+      "crateSha256": "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419",
+      "noticeRefs": [
+        "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a",
+        "2d01145596179ab6c55eade02ee8ad2c2172de88f2232625a00f17bb254b8c3a"
+      ]
+    },
+    {
+      "name": "winapi-util",
+      "version": "0.1.11",
+      "license": "Unlicense OR MIT",
+      "crateSha256": "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22",
+      "noticeRefs": [
+        "65314a6c96683f76f7495709bb0ddecb4eaa6fa244b28f23c4812ef8e5524066",
+        "739620ea44ad8f99e96ea272e583b63a7d44a83a71250d7550b2544ea6b49fbf"
+      ]
+    },
+    {
+      "name": "windows",
+      "version": "0.62.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "527fadee13e0c05939a6a05d5bd6eec6cd2e3dbd648b9f8e447c6518133d8580",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-collections",
+      "version": "0.3.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "23b2d95af1a8a14a3c7367e1ed4fc9c20e0a26e79551b1454d72583c97cc6610",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-core",
+      "version": "0.62.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "b8e83a14d34d0623b51dce9581199302a221863196a1dde71a7663a4c2be9deb",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-future",
+      "version": "0.3.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "e1d6f90251fe18a279739e78025bd6ddc52a7e22f921070ccdc67dde84c605cb",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-implement",
+      "version": "0.60.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "053e2e040ab57b9dc951b72c264860db7eb3b0200ba345b4e4c3b14f67855ddf",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-interface",
+      "version": "0.59.3",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "3f316c4a2570ba26bbec722032c4099d8c8bc095efccdc15688708623367e358",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-link",
+      "version": "0.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-numerics",
+      "version": "0.3.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "6e2e40844ac143cdb44aead537bbf727de9b044e107a0f1220392177d15b0f26",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-result",
+      "version": "0.4.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "7781fa89eaf60850ac3d2da7af8e5242a5ea78d1a11c49bf2910bb5a73853eb5",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-strings",
+      "version": "0.5.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "7837d08f69c77cf6b07689544538e017c1bfcf57e34b4c0ff58e6c2cd3b37091",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-sys",
+      "version": "0.52.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-sys",
+      "version": "0.59.0",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "1e38bc4d79ed67fd075bcc251a1c39b32a1776bbe92e5bef1f0bf1f8c531853b",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-sys",
+      "version": "0.61.2",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-targets",
+      "version": "0.52.6",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "9b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows-threading",
+      "version": "0.2.1",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "3949bd5b99cafdf1c7ca86b43ca564028dfe27d66958f2470940f73d86d75b37",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "windows_x86_64_gnullvm",
+      "version": "0.52.6",
+      "license": "MIT OR Apache-2.0",
+      "crateSha256": "24d5b23dc417412679681396f2b49f3de8c1473deb516bd34410872eff51ed0d",
+      "noticeRefs": [
+        "783829b43aacb86cb8e6cedcd777210c13f2081aae94419cc7a30e112977d488",
+        "ff82c90f84945c60601e96b43246009b9bc589f3ebe1cd8a0fd39a3520d8c310"
+      ]
+    },
+    {
+      "name": "winreg",
+      "version": "0.56.0",
+      "license": "MIT",
+      "crateSha256": "7d6f32a0ff4a9f6f01231eb2059cc85479330739333e0e58cadf03b6af2cca10",
+      "noticeRefs": [
+        "d9ba37d9bbdf711b0de66cd3b200142b10b7038e573fb869d535a27ce41165ec"
+      ]
+    },
+    {
+      "name": "winres",
+      "version": "0.1.12",
+      "license": "MIT",
+      "crateSha256": "b68db261ef59e9e52806f688020631e987592bd83619edccda9c47d42cde4f6c",
+      "noticeRefs": [
+        "b673337cdc9561b5b4d1cca5c55a6df545a31f0ea540995ca35b4980e6a5db40"
+      ]
+    },
+    {
+      "name": "writeable",
+      "version": "0.5.5",
+      "license": "Unicode-3.0",
+      "crateSha256": "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "writeable",
+      "version": "0.6.4",
+      "license": "Unicode-3.0",
+      "crateSha256": "3ad82d2a33cdc9674dc7465672f271e096168fcdbe0f799d9e6db8c5892679dc",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "xdialog",
+      "version": "3.1.9",
+      "license": "MIT",
+      "crateSha256": "a58a55672b2832b2b7b950dc6e53dad8f39c9b60b398e7a05e005eae7cc2cb6e",
+      "noticeRefs": [
+        "358004bf43849e51aa7bd616874e444ac18450175293475d31b6c64918598429"
+      ]
+    },
+    {
+      "name": "xml",
+      "version": "1.4.0",
+      "license": "MIT",
+      "crateSha256": "2f45bb2c13fec6a6cb4c0f76a7e94839e110a14ec803ec2940777a94c347bc52",
+      "noticeRefs": [
+        "06250c7066bcd3f947667887383bf797d5c128d53e27d140fadc461adacdadf1"
+      ]
+    },
+    {
+      "name": "yoke",
+      "version": "0.7.5",
+      "license": "Unicode-3.0",
+      "crateSha256": "120e6aef9aa629e3d4f52dc8cc43a015c7724194c97dfaf45180d2daf2b77f40",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "yoke",
+      "version": "0.8.3",
+      "license": "Unicode-3.0",
+      "crateSha256": "709fe23a0424b6a435d82152b1bd3fdfb0833487d5fa90d05d42762a9891fef5",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "yoke-derive",
+      "version": "0.7.5",
+      "license": "Unicode-3.0",
+      "crateSha256": "2380878cad4ac9aac1e2435f3eb4020e8374b5f13c296cb75b4620ff8e229154",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "yoke-derive",
+      "version": "0.8.3",
+      "license": "Unicode-3.0",
+      "crateSha256": "33811428bee40dbceb6d545e95754741d17a6aef9a4849f0fd62e2ba4f412a78",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerofrom",
+      "version": "0.1.8",
+      "license": "Unicode-3.0",
+      "crateSha256": "0ec05a11813ea801ff6d75110ad09cd0824ddba17dfe17128ea0d5f68e6c5272",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerofrom-derive",
+      "version": "0.1.8",
+      "license": "Unicode-3.0",
+      "crateSha256": "f75b4683f6c7f45248d4d64056a24298c6281e0993356d7d1b4a1a962ef10d4a",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zeroize",
+      "version": "1.9.0",
+      "license": "Apache-2.0 OR MIT",
+      "crateSha256": "e13c156562582aa81c60cb29407084cdb54c4164760106ab78e6c5b0858cf64e",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "836ed921bbad486c21fe437f1f565aef73cf20f242f7344eae04b01ed53a2d57"
+      ]
+    },
+    {
+      "name": "zerotrie",
+      "version": "0.2.5",
+      "license": "Unicode-3.0",
+      "crateSha256": "4ea269c3bd32f0a32c321907a2ae912ba6f4649bb0fc764a15627e99a7095a3f",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerovec",
+      "version": "0.10.4",
+      "license": "Unicode-3.0",
+      "crateSha256": "aa2b893d79df23bfb12d5461018d408ea19dfafe76c2c7ef6d4eba614f8ff079",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerovec",
+      "version": "0.11.8",
+      "license": "Unicode-3.0",
+      "crateSha256": "bb0464e17806c1d976d5cba29399c7f08e516e279e2ba493f63123b5fca67dd8",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerovec-derive",
+      "version": "0.10.4",
+      "license": "Unicode-3.0",
+      "crateSha256": "3e3c6377872d72510393f688a555d7097b0f741995c7a00f0407f786dd486b2d",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zerovec-derive",
+      "version": "0.11.6",
+      "license": "Unicode-3.0",
+      "crateSha256": "34df6fc39dbd26ddc9c10e6a2984476e13acce22e64e4487636ef494369225da",
+      "noticeRefs": [
+        "cde87abe221f413fede55ded0f17985f37b8fdc23e5f6cba9a3955437facb3ae"
+      ]
+    },
+    {
+      "name": "zip",
+      "version": "8.6.0",
+      "license": "MIT",
+      "crateSha256": "2d04a6b5381502aa6087c94c669499eb1602eb9c5e8198e534de571f7154809b",
+      "noticeRefs": [
+        "6ac8711fb340c62ce0a4ecd463342d3fa0e8e70de697c863a2e1c0c53006003c"
+      ]
+    },
+    {
+      "name": "zlib-rs",
+      "version": "0.6.8",
+      "license": "Zlib",
+      "crateSha256": "b268e58e7c693d7c271f93ffc4ba3b380412554231c85bf61ca7af91042a4112",
+      "noticeRefs": [
+        "1a7d409d51427f4f3edeb7c0a015fc0ef0369ce4a12b9d2ae01772ab35ad1536"
+      ]
+    },
+    {
+      "name": "zmij",
+      "version": "1.0.23",
+      "license": "MIT",
+      "crateSha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+      "noticeRefs": [
+        "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+      ]
+    },
+    {
+      "name": "zopfli",
+      "version": "0.8.3",
+      "license": "Apache-2.0",
+      "crateSha256": "f05cd8797d63865425ff89b5c4a48804f35ba0ce8d125800027ad6017d2b5249",
+      "noticeRefs": [
+        "b969ab4be2f63a5d3ca347ebfef198a59ef386d94ff2e32756fc544fe7d9bc11"
+      ]
+    },
+    {
+      "name": "zstd",
+      "version": "0.14.0",
+      "license": "BSD-3-Clause",
+      "crateSha256": "bf06bd8162af0734b344780deb55b42a2429ae430870d13fcc12f238e880fe6e",
+      "noticeRefs": [
+        "769153f04f135a5bc87cd68f6dcf5168ad3c136749616e8dbd9b78b0199e0b18"
+      ]
+    },
+    {
+      "name": "zstd-safe",
+      "version": "8.0.0",
+      "license": "BSD-3-Clause",
+      "crateSha256": "ae42c0555055784c70058d19ba8e275528e8a99a706684868ace5da4e716a4ab",
+      "noticeRefs": [
+        "769153f04f135a5bc87cd68f6dcf5168ad3c136749616e8dbd9b78b0199e0b18"
+      ]
+    },
+    {
+      "name": "zstd-sys",
+      "version": "2.1.0+zstd.1.5.7",
+      "license": "BSD-3-Clause",
+      "crateSha256": "0ef0a8027ec3ee71300ab3bcbcd0393f434aa72b91ca6d635a39941deae8eea0",
+      "noticeRefs": [
+        "769153f04f135a5bc87cd68f6dcf5168ad3c136749616e8dbd9b78b0199e0b18",
+        "08728d1c12d66320bd53177c8c026f2191e0a2e14fe0f3c143dcf49d3cd476d1",
+        "1be990a929b50ca91d815cea1cd3cebb5c49e86076ade82b1103f2b9cd71a3af",
+        "2caa041c7859b01cfe525cdbf729bdc440b2e07e1a5273b2d01d4ef13c62ac69"
+      ]
+    },
+    {
+      "name": "zune-core",
+      "version": "0.5.3",
+      "license": "MIT OR Apache-2.0 OR Zlib",
+      "crateSha256": "d56377fd46368984a170bc5aac5567e52ca5da874caa60bea39fcbca78fb658b",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "4ae441972cdd6fe41abb11d67cf6ae8731271a82cd0c864cc450b55248e4966c",
+        "b8cba0284c86612bc1113ef3dc114b47d70fdcfb923498c07569d09ffcda5a30"
+      ]
+    },
+    {
+      "name": "zune-jpeg",
+      "version": "0.5.15",
+      "license": "MIT OR Apache-2.0 OR Zlib",
+      "crateSha256": "27bc9d5b815bc103f142aa054f561d9187d191692ec7c2d1e2b4737f8dbd7296",
+      "noticeRefs": [
+        "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "4ae441972cdd6fe41abb11d67cf6ae8731271a82cd0c864cc450b55248e4966c",
+        "b8cba0284c86612bc1113ef3dc114b47d70fdcfb923498c07569d09ffcda5a30"
+      ]
+    }
+  ]
+}

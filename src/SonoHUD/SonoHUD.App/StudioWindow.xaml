@@ -1,0 +1,134 @@
+<Window x:Class="SonoHUD.App.StudioWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework" xmlns:views="clr-namespace:SonoHUD.App.Views" Title="SonoHUD" WindowStyle="None" ResizeMode="CanResize" Width="1280" Height="940" MinWidth="1000" MinHeight="680"
+ Icon="pack://application:,,,/SonoHUD;component/Assets/Branding/SonoHUD.ico" Background="{DynamicResource StudioElevated}" Foreground="{DynamicResource StudioInk}" FontFamily="{x:Static views:DesignResources.FontFamily}" FontSize="14"
+ UseLayoutRounding="True" SnapsToDevicePixels="True" views:DesignMotion.Enabled="{Binding AnimationsEnabled}">
+ <shell:WindowChrome.WindowChrome><shell:WindowChrome CaptionHeight="44" ResizeBorderThickness="6" GlassFrameThickness="0" UseAeroCaptionButtons="False" CornerRadius="16"/></shell:WindowChrome.WindowChrome>
+ <Window.Resources><ResourceDictionary>
+  <ResourceDictionary.MergedDictionaries><ResourceDictionary Source="Views/StudioTheme.xaml"/></ResourceDictionary.MergedDictionaries>
+  <Style x:Key="CaptionButton" TargetType="Button" BasedOn="{StaticResource StudioIconButton}"><Setter Property="shell:WindowChrome.IsHitTestVisibleInChrome" Value="True"/><Setter Property="Width" Value="36"/><Setter Property="Height" Value="28"/><Setter Property="MinHeight" Value="28"/><Setter Property="Foreground" Value="{DynamicResource StudioMuted}"/></Style>
+  <Style x:Key="SettingsGroup" TargetType="Border"><Setter Property="BorderBrush" Value="{DynamicResource StudioLine}"/><Setter Property="BorderThickness" Value="0,0,0,1"/><Setter Property="Padding" Value="8,22"/></Style>
+ </ResourceDictionary></Window.Resources>
+ <Grid>
+ <Border x:Name="DeckFrame" Background="{DynamicResource StudioBackground}" BorderBrush="#242424" BorderThickness="0" CornerRadius="16" Margin="12" Padding="20,44,20,14">
+  <Grid><Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+     <views:HomePlayerView x:Name="HomePlayer" Visibility="{Binding HomeVisible, Converter={StaticResource BoolVisibility}}"/>
+   <ScrollViewer x:Name="PageScroll" Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="4,4,4,16">
+    <ScrollViewer.Style><Style TargetType="ScrollViewer"><Style.Triggers><DataTrigger Binding="{Binding HomeVisible}" Value="True"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers></Style></ScrollViewer.Style>
+    <Grid x:Name="PageContent">
+
+     <StackPanel Visibility="{Binding OverlayVisible, Converter={StaticResource BoolVisibility}}">
+      <TextBlock Text="오버레이" Style="{StaticResource StudioTitle}"/>
+      <StackPanel Orientation="Horizontal" Margin="0,12,0,16"><Button x:Name="ViewDesigns" Content="디자인 선택" Command="{Binding DesignsCommand}" AutomationProperties.AutomationId="ViewDesigns" Margin="0,0,8,0"/><Button x:Name="CustomizeDesign" Content="디자인 조정" Command="{Binding CustomizeCommand}" AutomationProperties.AutomationId="CustomizeDesign"/></StackPanel>
+      <TextBlock Text="{Binding GalleryHint}" Style="{StaticResource StudioDescription}" Margin="0,0,0,16" Visibility="{Binding DesignGalleryVisible, Converter={StaticResource BoolVisibility}}"/>
+      <UniformGrid x:Name="PresetGallery" Columns="2" Margin="-4,0,-4,0" Visibility="{Binding DesignGalleryVisible, Converter={StaticResource BoolVisibility}}"/>
+      <Grid Visibility="{Binding CustomizationVisible, Converter={StaticResource BoolVisibility}}"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="24"/><ColumnDefinition Width="320"/></Grid.ColumnDefinitions>
+       <StackPanel>
+        <Border Background="{DynamicResource StudioPanel}" BorderBrush="{DynamicResource StudioLine}" BorderThickness="1" CornerRadius="10" Padding="18"><StackPanel>
+         <DockPanel Margin="0,0,0,16"><TextBlock Text="{Binding PresetName}" FontWeight="SemiBold"/><TextBlock Text="미리보기" HorizontalAlignment="Right" Foreground="{DynamicResource StudioMuted}" FontSize="11"/></DockPanel>
+         <ContentControl x:Name="LivePreviewHost" Height="240" IsHitTestVisible="False"/>
+         <TextBlock Text="{Binding DimensionsLabel}" Foreground="{DynamicResource StudioMuted}" FontSize="11" HorizontalAlignment="Center" Margin="0,16,0,2"/>
+        </StackPanel></Border>
+        <TextBlock Text="{Binding VisibilityHint}" Style="{StaticResource StudioDescription}" Margin="0,14,0,0"/>
+        <TextBlock Text="Home과 같은 가사를 표시합니다. 온라인 검색·후보 선택·싱크 보정은 음악 화면의 가사 영역에서 조절하세요." TextWrapping="Wrap" Foreground="{DynamicResource StudioMuted}" FontSize="12" Margin="0,12,0,0" Visibility="{Binding IsLyrics, Converter={StaticResource BoolVisibility}}"/>
+       </StackPanel>
+       <StackPanel Grid.Column="2">
+        <UniformGrid Columns="3" Margin="0,0,0,12"><Button x:Name="TabLayout" Content="배치" Command="{Binding SectionCommand}" CommandParameter="Layout" AutomationProperties.AutomationId="TabLayout" Margin="0,0,4,0"/><Button x:Name="TabAppearance" Content="모양" Command="{Binding SectionCommand}" CommandParameter="Appearance" AutomationProperties.AutomationId="TabAppearance" Margin="0,0,4,0"/><Button x:Name="TabAnimation" Content="움직임" Command="{Binding SectionCommand}" CommandParameter="Animation" AutomationProperties.AutomationId="TabAnimation"/></UniformGrid>
+        <StackPanel Visibility="{Binding LayoutVisible, Converter={StaticResource BoolVisibility}}">
+         <DockPanel Margin="0,12,0,0"><TextBlock Text="크기" FontWeight="SemiBold"/><TextBlock Text="{Binding SizeLabel}" Foreground="{DynamicResource StudioMuted}" HorizontalAlignment="Right"/></DockPanel>
+         <Slider Minimum="75" Maximum="150" TickFrequency="5" Value="{Binding SizePercent}" AutomationProperties.AutomationId="SizeSlider" AutomationProperties.Name="오버레이 크기"/>
+         <TextBlock Text="75~150% · 모서리를 끌어도 조절할 수 있습니다." Style="{StaticResource StudioDescription}" FontSize="12"/>
+         <TextBlock Text="표시할 모니터" Style="{StaticResource StudioLabel}"/><ComboBox ItemsSource="{Binding Monitors}" DisplayMemberPath="FriendlyLabel" SelectedValuePath="Device" SelectedValue="{Binding MonitorId}" AutomationProperties.AutomationId="MonitorPicker" AutomationProperties.Name="표시할 모니터"/>
+         <TextBlock Text="빠른 위치" Style="{StaticResource StudioLabel}"/><UniformGrid Columns="3"><Button Content="왼쪽 위" Command="{Binding AnchorCommand}" CommandParameter="TopLeft" Margin="0,0,4,6" Padding="4" AutomationProperties.AutomationId="AnchorTopLeft"/><Button Content="가운데" Command="{Binding AnchorCommand}" CommandParameter="Center" Margin="0,0,4,6" Padding="4" AutomationProperties.AutomationId="AnchorCenter"/><Button Content="오른쪽 아래" Command="{Binding AnchorCommand}" CommandParameter="BottomRight" Margin="0,0,0,6" Padding="4" AutomationProperties.AutomationId="AnchorBottomRight"/></UniformGrid>
+         <TextBlock Text="몸체를 끌어 이동하고 모서리로 크기를 조절하세요. 다른 화면으로 나가면 미완료 조정은 취소됩니다." Style="{StaticResource StudioDescription}" Margin="0,12,0,0"/>
+        </StackPanel>
+        <StackPanel Visibility="{Binding AppearanceVisible, Converter={StaticResource BoolVisibility}}">
+         <TextBlock Text="글꼴" Style="{StaticResource StudioLabel}"/><ComboBox ItemsSource="{Binding FontChoices}" SelectedItem="{Binding FontFamily}" AutomationProperties.AutomationId="FontPicker" AutomationProperties.Name="오버레이 글꼴"/>
+         <TextBlock Text="{Binding FontCoverage}" Style="{StaticResource StudioDescription}" FontSize="11" Margin="0,8,0,0"/>
+         <Border Background="{DynamicResource StudioPanel}" CornerRadius="6" Padding="12" Margin="0,10,0,0"><TextBlock Text="음악과 일상  Music &amp; life&#10;音楽と日常  0123456789" FontFamily="{Binding PreviewFontFamily}" FontSize="16" LineHeight="24" TextWrapping="Wrap" AutomationProperties.AutomationId="FontSample"/></Border>
+         <DockPanel Margin="0,20,0,0"><TextBlock Text="글자 크기" FontWeight="SemiBold"/><TextBlock Text="{Binding TextSizeLabel}" Foreground="{DynamicResource StudioMuted}" HorizontalAlignment="Right"/></DockPanel>
+         <Slider Minimum="90" Maximum="115" TickFrequency="5" IsSnapToTickEnabled="True" Value="{Binding TextSizePercent}" AutomationProperties.AutomationId="TextSizeSlider" AutomationProperties.Name="오버레이 글자 크기"/>
+         <TextBlock Text="곡명 굵기" Style="{StaticResource StudioLabel}"/><ComboBox ItemsSource="{Binding TitleWeights}" DisplayMemberPath="Label" SelectedValuePath="Value" SelectedValue="{Binding TitleWeight}" AutomationProperties.AutomationId="TitleWeightPicker" AutomationProperties.Name="곡명 굵기"/>
+         <DockPanel Margin="0,20,0,0"><TextBlock Text="배경 불투명도" FontWeight="SemiBold"/><TextBlock Text="{Binding OpacityLabel}" Foreground="{DynamicResource StudioMuted}" HorizontalAlignment="Right"/></DockPanel>
+         <Slider Minimum="0" Maximum="100" TickFrequency="1" Value="{Binding OpacityPercent}" AutomationProperties.AutomationId="OpacitySlider" AutomationProperties.Name="배경 불투명도"/>
+         <TextBlock Text="배경에만 적용됩니다. 밝은 화면 위에서 읽기 어렵다면 값을 높여 주세요." Style="{StaticResource StudioDescription}" FontSize="12"/>
+        </StackPanel>
+        <StackPanel Visibility="{Binding AnimationVisible, Converter={StaticResource BoolVisibility}}">
+         <TextBlock Text="전환 강도" Style="{StaticResource StudioLabel}"/><TextBlock Text="표시·숨김과 곡이 바뀔 때 적용됩니다. 계속 반복되는 효과는 없습니다." Style="{StaticResource StudioDescription}" Margin="0,0,0,16"/>
+         <Button x:Name="MotionOff" Content="없음  ·  즉시 전환" Command="{Binding AnimationCommand}" CommandParameter="Off" HorizontalContentAlignment="Left" Margin="0,0,0,8" AutomationProperties.AutomationId="MotionOff"/>
+         <Button x:Name="MotionCalm" Content="차분하게  ·  짧은 페이드" Command="{Binding AnimationCommand}" CommandParameter="Calm" HorizontalContentAlignment="Left" Margin="0,0,0,8" AutomationProperties.AutomationId="MotionCalm"/>
+         <Button x:Name="MotionDynamic" Content="생동감  ·  콘텐츠별 전환" Command="{Binding AnimationCommand}" CommandParameter="Dynamic" HorizontalContentAlignment="Left" Margin="0,0,0,8" AutomationProperties.AutomationId="MotionDynamic"/>
+         <Button x:Name="MotionCinematic" Content="시네마틱  ·  단계적인 레이어 전환" Command="{Binding AnimationCommand}" CommandParameter="Cinematic" HorizontalContentAlignment="Left" AutomationProperties.AutomationId="MotionCinematic"/>
+         <TextBlock Text="{Binding AnimationName, StringFormat=선택한 움직임: {0}}" Foreground="{DynamicResource StudioAccent}" Margin="0,16,0,12"/><TextBlock Text="조정 중에는 위치와 크기를 즉시 반영합니다. 완료한 뒤 전환을 확인하세요." Style="{StaticResource StudioDescription}"/>
+        </StackPanel>
+       </StackPanel>
+      </Grid>
+     </StackPanel>
+     <StackPanel Visibility="{Binding AudioVisible, Converter={StaticResource BoolVisibility}}">
+      <TextBlock Text="오디오" Style="{StaticResource StudioTitle}"/>
+      <TextBlock Text="연결된 플레이어와 Windows 출력 상태" Style="{StaticResource StudioDescription}" Margin="0,8,0,8"/>
+      <Border Style="{StaticResource SettingsGroup}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="220"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><StackPanel><TextBlock Text="음악 소스" FontSize="17" FontWeight="SemiBold"/><TextBlock Text="정보를 가져올 플레이어" Style="{StaticResource StudioDescription}" Margin="0,6,0,0"/></StackPanel><StackPanel Grid.Column="1"><ComboBox ItemsSource="{Binding MediaSessions}" DisplayMemberPath="Label" SelectedValuePath="Key" SelectedValue="{Binding SelectedMedia}" AutomationProperties.AutomationId="MediaPicker" AutomationProperties.Name="연결할 플레이어"/><TextBlock Text="{Binding MediaStatus}" Style="{StaticResource StudioDescription}" Margin="0,12,0,0"/><TextBlock Text="선택한 음악 소스는 앱을 다시 열어도 유지됩니다." Style="{StaticResource StudioDescription}" FontSize="12" Margin="0,8,0,0"/></StackPanel></Grid></Border>
+      <views:SpectrumSettingsView x:Name="SpectrumSettings"/>
+      <Border Style="{StaticResource SettingsGroup}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="220"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><StackPanel><TextBlock Text="Windows 출력" FontSize="17" FontWeight="SemiBold"/><TextBlock Text="현재 상태 · 읽기 전용" Style="{StaticResource StudioDescription}" Margin="0,6,0,0"/></StackPanel><StackPanel Grid.Column="1"><TextBlock Text="{Binding AudioStatus}" FontSize="15" TextWrapping="Wrap" AutomationProperties.AutomationId="AudioStatus"/><ProgressBar Value="{Binding OutputLevel, Mode=OneWay}" Maximum="100" Height="4" Margin="0,18,0,0" AutomationProperties.Name="기본 출력 장치 음량, 읽기 전용"/></StackPanel></Grid></Border>
+     </StackPanel>
+     <StackPanel Visibility="{Binding SettingsVisible, Converter={StaticResource BoolVisibility}}">
+      <TextBlock Text="설정" Style="{StaticResource StudioTitle}"/>
+      <views:AppearanceView x:Name="AppearancePanel"/>
+      <views:TaskbarSettingsView x:Name="WidgetSettings"/>
+      <views:PluginSettingsView/>
+      <views:DeploymentSettingsView/>
+      <Border Style="{StaticResource SettingsGroup}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="200"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><TextBlock Text="오버레이 동작" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,6,0,0"/><StackPanel Grid.Column="1"><CheckBox Content="앱을 시작하면 오버레이 표시" IsChecked="{Binding ShowOnStartup}" AutomationProperties.AutomationId="ShowOnStartup"/><CheckBox Content="마우스 클릭 통과" IsChecked="{Binding ClickThrough}" AutomationProperties.AutomationId="ClickThrough"/><TextBlock Text="게임·다른 앱을 조작하려면 켜 두세요. 위치와 크기는 디자인 조정에서 변경합니다." Style="{StaticResource StudioDescription}" Margin="24,0,0,0"/></StackPanel></Grid></Border>
+      <Border Style="{StaticResource SettingsGroup}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="200"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><TextBlock Text="단축키" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,6,0,0"/><StackPanel Grid.Column="1"><CheckBox Content="전역 단축키 사용" IsChecked="{Binding HotkeyEnabled}" AutomationProperties.AutomationId="HotkeyEnabled"/><StackPanel Orientation="Horizontal" Margin="0,8,0,10"><TextBlock Text="Ctrl + Alt + F" Margin="0,0,12,0"/><ComboBox Width="90" ItemsSource="{Binding HotkeyKeys}" SelectedItem="{Binding HotkeyFunction}" AutomationProperties.AutomationId="HotkeyPicker" AutomationProperties.Name="전역 단축키 기능 키"/></StackPanel><TextBlock Text="{Binding HotkeyStatus}" Style="{StaticResource StudioDescription}"/></StackPanel></Grid></Border>
+      <Border Style="{StaticResource SettingsGroup}"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="200"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><TextBlock Text="미리보기" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,6,0,0"/><StackPanel Grid.Column="1"><CheckBox Content="샘플 음악으로 디자인 미리보기" IsChecked="{Binding DemoMode}" AutomationProperties.AutomationId="DemoMode"/><TextBlock Text="직접 작성한 샘플입니다. 실제 재생 상태는 바꾸지 않으며 다음 실행에는 실제 음악으로 돌아갑니다." Style="{StaticResource StudioDescription}" Margin="24,0,0,0"/></StackPanel></Grid></Border>
+      <Expander Header="제품 정보와 라이선스" Margin="0,20,0,0" Foreground="{DynamicResource StudioInk}"
+                x:Name="ReleaseInformation" Expanded="ReleaseInfoExpanded" AutomationProperties.AutomationId="ReleaseInformation">
+       <StackPanel Margin="0,12,0,0">
+        <TextBlock x:Name="ReleaseVersion" Margin="0,0,0,10" Style="{StaticResource StudioDescription}" />
+        <ComboBox x:Name="ReleaseDocument" HorizontalAlignment="Left" MinWidth="220"
+                  SelectionChanged="ReleaseDocumentChanged" AutomationProperties.Name="안내 문서">
+         <ComboBoxItem Content="제품 라이선스" />
+         <ComboBoxItem Content="제3자 소프트웨어와 글꼴 고지" />
+         <ComboBoxItem Content="개인정보와 외부 서비스" />
+        </ComboBox>
+        <TextBox x:Name="ReleaseDocumentText" Margin="0,8,0,0" Height="210" IsReadOnly="True" TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto" AutomationProperties.Name="선택한 문서 내용" />
+       </StackPanel>
+      </Expander>
+      <Expander Header="저장 및 이전 데이터" Foreground="{DynamicResource StudioInk}" Margin="0,24,0,0" AutomationProperties.AutomationId="StorageDetails"><StackPanel Margin="0,16,0,0"><TextBlock Text="{Binding DataPath}" TextWrapping="Wrap" Foreground="{DynamicResource StudioMuted}"/><TextBlock Text="설정은 자동 저장됩니다. 구버전 원본을 보존하고 새 설정은 별도 파일에 기록합니다." Style="{StaticResource StudioDescription}" Margin="0,12,0,12"/><Button Content="지금 다시 저장" Command="{Binding SaveCommand}" HorizontalAlignment="Left" AutomationProperties.AutomationId="SaveNow"/></StackPanel></Expander>
+     </StackPanel>
+    </Grid>
+   </ScrollViewer>
+   <views:StudioMiniPlayer x:Name="Mini" Grid.Row="1" Visibility="{Binding MiniPlayerVisible, Converter={StaticResource BoolVisibility}}" Margin="4,0,4,12"/>
+   <Border Grid.Row="2" Background="Transparent" BorderBrush="{DynamicResource StudioLine}" BorderThickness="0,1,0,0" Padding="12,12,12,8" Margin="4,0,4,8">
+    <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+     <CheckBox Style="{StaticResource StudioToggle}" Content="{Binding OverlayState}" IsChecked="{Binding OverlayEnabled}" IsEnabled="{Binding CanCustomize}" VerticalAlignment="Center" AutomationProperties.AutomationId="OverlayToggle" AutomationProperties.Name="오버레이 켜기 또는 끄기"/>
+     <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="{Binding IsPositioning, Converter={StaticResource BoolVisibility}}"><Button Content="취소" Command="{Binding CancelDesignCommand}" AutomationProperties.AutomationId="CancelDesign" Margin="0,0,8,0"/><Button Content="완료" Command="{Binding ApplyDesignCommand}" Style="{StaticResource StudioPrimary}" AutomationProperties.AutomationId="ApplyDesign"/></StackPanel>
+     <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="{Binding CanCustomize, Converter={StaticResource BoolVisibility}}"><Button Style="{StaticResource StudioIconButton}" Command="{Binding UndoCommand}" ToolTip="최근 변경 되돌리기" AutomationProperties.Name="최근 변경 되돌리기" AutomationProperties.AutomationId="Undo" Margin="0,0,4,0"><views:IconGlyph Kind="Undo" Width="17" Height="17"/></Button><Button Style="{StaticResource StudioIconButton}" Command="{Binding RedoCommand}" ToolTip="변경 다시 적용" AutomationProperties.Name="변경 다시 적용" AutomationProperties.AutomationId="Redo"><views:IconGlyph Kind="Redo" Width="17" Height="17"/></Button></StackPanel>
+    </Grid>
+   </Border>
+   <Border x:Name="NavSurface" Grid.Row="3" Background="{DynamicResource StudioPanel}" BorderThickness="0" CornerRadius="8" Padding="4" Margin="4,0,4,0">
+    <Grid><UniformGrid x:Name="NavigationButtons" Columns="4">
+     <Button x:Name="NavHome" Content="음악" Style="{StaticResource StudioNav}" FontSize="17" Command="{Binding NavigateCommand}" CommandParameter="Home" AutomationProperties.AutomationId="NavHome" AutomationProperties.Name="홈 음악 플레이어" Margin="0,0,4,0"/>
+     <Button x:Name="NavOverlay" Content="오버레이" Style="{StaticResource StudioNav}" FontSize="17" Command="{Binding NavigateCommand}" CommandParameter="Overlay" AutomationProperties.AutomationId="NavOverlay" AutomationProperties.Name="오버레이" Margin="0,0,4,0"/>
+     <Button x:Name="NavAudio" Content="오디오" Style="{StaticResource StudioNav}" FontSize="17" Command="{Binding NavigateCommand}" CommandParameter="Audio" AutomationProperties.AutomationId="NavAudio" AutomationProperties.Name="오디오" Margin="0,0,4,0"/>
+     <Button x:Name="NavSettings" Content="설정" Style="{StaticResource StudioNav}" FontSize="17" Command="{Binding NavigateCommand}" CommandParameter="Settings" AutomationProperties.AutomationId="NavSettings" AutomationProperties.Name="설정"/>
+    </UniformGrid><Border x:Name="NavBeam" Background="{DynamicResource PrismRibbon}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="48" Height="2" CornerRadius="1" IsHitTestVisible="False"><Border.RenderTransform><TranslateTransform/></Border.RenderTransform></Border></Grid>
+   </Border>
+   <Grid Grid.Row="4" Margin="12,12,12,0"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+    <TextBlock Text="{Binding Status}" FontSize="11" Foreground="{DynamicResource StudioMuted}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Status}" Margin="0,0,20,0" AutomationProperties.AutomationId="Status"/>
+    <TextBlock Grid.Column="1" Text="{Binding SaveStatus}" FontSize="11" Foreground="{DynamicResource StudioTertiary}" AutomationProperties.AutomationId="SaveStatus"/>
+    <Button Grid.Column="2" Content="다시 저장" Command="{Binding SaveCommand}" Visibility="{Binding HasSaveError, Converter={StaticResource BoolVisibility}}" AutomationProperties.AutomationId="RetrySave" Margin="12,0,0,0" Padding="10,4" MinHeight="28"/>
+   </Grid>
+  </Grid>
+ </Border>
+ <Image Source="Assets/Branding/C-wave-refinement-v2.png" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,20,0,0" IsHitTestVisible="False" RenderOptions.BitmapScalingMode="HighQuality" AutomationProperties.Name="SonoHUD 로고"/>
+ <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,28,0" shell:WindowChrome.IsHitTestVisibleInChrome="True">
+  <Button Style="{StaticResource CaptionButton}" Click="MinimizeWindow" ToolTip="최소화" AutomationProperties.Name="창 최소화" AutomationProperties.AutomationId="WindowMinimize"><views:IconGlyph Kind="Minimize" Width="14" Height="14" StrokeThickness="1.2"/></Button>
+  <Button x:Name="MaximizeButton" Style="{StaticResource CaptionButton}" Click="ToggleMaximizeWindow" ToolTip="최대화" AutomationProperties.Name="창 최대화" AutomationProperties.AutomationId="WindowMaximize"><views:IconGlyph x:Name="MaximizeGlyph" Kind="Maximize" Width="14" Height="14" StrokeThickness="1.2"/></Button>
+  <Button Click="CloseWindow" ToolTip="닫기" AutomationProperties.Name="SonoHUD 닫기" AutomationProperties.AutomationId="WindowClose"><Button.Style><Style TargetType="Button" BasedOn="{StaticResource CaptionButton}"><Style.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#A82A25"/><Setter Property="Foreground" Value="White"/></Trigger></Style.Triggers></Style></Button.Style><views:IconGlyph Kind="Close" Width="16" Height="16" StrokeThickness="1.2"/></Button>
+ </StackPanel>
+ </Grid>
+</Window>
+
+
+

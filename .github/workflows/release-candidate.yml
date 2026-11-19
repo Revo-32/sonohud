@@ -1,0 +1,110 @@
+name: Windows release candidate
+on:
+  workflow_dispatch:
+    inputs:
+      sign_index:
+        description: Bind a release channel before building and sign its verified index
+        type: boolean
+        required: true
+        default: false
+concurrency:
+  group: sonohud-stable-preparation
+  cancel-in-progress: false
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  candidate:
+    if: github.repository == 'Revo-32/sonohud' && github.actor == github.repository_owner && github.triggering_actor == github.repository_owner && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          global-json-file: global.json
+      - name: Check release version and refuse existing tags or drafts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -B scripts/check-release-slot.py
+      - name: Check the source-controlled release trust
+        env:
+          REPOSITORY: ${{ github.repository }}
+          TRUSTED_REF: ${{ github.event.repository.default_branch }}
+        run: |
+          if ($env:GITHUB_REF -cne "refs/heads/$env:TRUSTED_REF") {throw '서명 후보는 검토한 기본 브랜치에서 실행하세요.'}
+          $owner,$repository=$env:REPOSITORY.Split('/')
+          $trust=Get-Content docs/release/update-trust.json -Raw | ConvertFrom-Json
+          if ($trust.owner -cne $owner -or $trust.repository -cne $repository) {throw '승인한 저장소와 다릅니다.'}
+          ./scripts/Set-ReleaseFeed.ps1 -Owner $owner -Repository $repository -PublicKey $trust.publicKey -NextPublicKey $trust.nextPublicKey
+      - name: Locked restore and regression tests
+        run: |
+          $tests='src/SonoHUD/SonoHUD.Tests/SonoHUD.Tests.csproj'
+          dotnet restore $tests -r win-x64 --locked-mode -p:SelfContained=false
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          dotnet run --project $tests -c Release -r win-x64 --no-restore -- "$env:RUNNER_TEMP/core-results"
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+      - name: Rebuild independent source trees, package and audit
+        run: |
+          ./scripts/New-Distribution.ps1 -OutputDirectory "$env:RUNNER_TEMP/rc" -WorkDirectory "$env:RUNNER_TEMP/b" -EvidenceDirectory "$env:RUNNER_TEMP/e"
+          python -B scripts/check-manifest.py "$env:RUNNER_TEMP/rc"
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reviewed-candidate
+          path: ${{ runner.temp }}/rc/*
+          if-no-files-found: error
+          retention-days: 7
+  sign:
+    needs: candidate
+    if: inputs.sign_index && github.ref_name == github.event.repository.default_branch
+    environment: release-signing
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: reviewed-candidate
+          path: ${{ runner.temp }}/rc
+      - name: Verify inventory and exact compiled channel input
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          $rc="$env:RUNNER_TEMP/rc"
+          python -B scripts/check-manifest.py $rc
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          $owner,$repository=$env:REPOSITORY.Split('/')
+          $trust=Get-Content docs/release/update-trust.json -Raw | ConvertFrom-Json
+          if ($trust.owner -cne $owner -or $trust.repository -cne $repository) {throw '승인한 저장소와 다릅니다.'}
+          ./scripts/Set-ReleaseFeed.ps1 -Owner $owner -Repository $repository -PublicKey $trust.publicKey -NextPublicKey $trust.nextPublicKey
+          $policy='src/SonoHUD/SonoHUD.App/Deployment/ReleaseChannel.g.cs'
+          $zip=Get-ChildItem -LiteralPath $rc -Filter '*-source.zip'
+          $archive=[IO.Compression.ZipFile]::OpenRead($zip.FullName)
+          try {
+            $stream=$archive.GetEntry($policy).Open()
+            try {$actual=[Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($stream))} finally {$stream.Dispose()}
+            if ($actual -cne (Get-FileHash -LiteralPath $policy).Hash) {throw '공개키 구성 불일치'}
+          } finally {$archive.Dispose()}
+      - name: Sign and verify update index
+        env:
+          SONOHUD_UPDATE_PKCS8: ${{ secrets.SONOHUD_UPDATE_PKCS8 }}
+        run: |
+          $rc="$env:RUNNER_TEMP/rc"
+          $public=(Get-Content docs/release/update-trust.json -Raw | ConvertFrom-Json).publicKey
+          ./scripts/Sign-ReleaseFeed.ps1 -Directory $rc -PublicKey $public
+          Remove-Item Env:SONOHUD_UPDATE_PKCS8
+          ./scripts/Sign-ReleaseFeed.ps1 -Directory $rc -PublicKey $public -VerifyOnly
+          python -B scripts/check-manifest.py $rc --add-verified-signature
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          python -B scripts/check-manifest.py $rc --signed
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reviewed-candidate-with-update-signature
+          path: ${{ runner.temp }}/rc/*
+          if-no-files-found: error
+          retention-days: 7

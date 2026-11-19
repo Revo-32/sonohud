@@ -1,0 +1,49 @@
+<Project>
+  <Target Name="SonoHUDVerifyMetadataInput" BeforeTargets="CsWinRTGenerateProjection">
+    <GetFileHash Files="$(MSBuildProjectDirectory)/../../../third_party/windows-metadata/Windows.winmd" Algorithm="SHA256">
+      <Output TaskParameter="Items" ItemName="SonoHUDMetadataHash" />
+    </GetFileHash>
+    <Error Condition="'%(SonoHUDMetadataHash.FileHash)' != 'AEA3E9828927AEDD1ACE2B927911E826F386D5C52DC6BD4151C10D314CB1ADBF'"
+           Text="The audited MIT Windows.winmd input changed. Revalidate provenance before generating projections." />
+  </Target>
+  <Target Name="SonoHUDRejectExternalWinRTProjection" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <SonoHUDForbiddenWinRTReference Include="@(ReferencePath)" Condition="'%(Filename)' == 'Microsoft.Windows.SDK.NET' Or '%(Filename)' == 'WinRT.Runtime'" />
+    </ItemGroup>
+    <Error Condition="'@(SonoHUDForbiddenWinRTReference)' != ''" Text="External WinRT projection/runtime reference is forbidden in the remediated app: @(SonoHUDForbiddenWinRTReference)" />
+  </Target>
+  <Target Name="SonoHUDRejectPublishedSdkBinaries" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <SonoHUDForbiddenPublishFile Include="@(ResolvedFileToPublish)" Condition="'%(Filename)' == 'Microsoft.Windows.SDK.NET' Or '%(Filename)' == 'WinRT.Runtime'" />
+    </ItemGroup>
+    <Error Condition="'@(SonoHUDForbiddenPublishFile)' != ''" Text="A forbidden SDK/WinRT DLL entered the publish set: @(SonoHUDForbiddenPublishFile)" />
+  </Target>
+  <!-- The upstream embedded runtime is built without nullable analysis. Keep
+       that policy local to generated/copied upstream files, not SonoHUD code. -->
+  <UsingTask TaskName="SonoHUDNormalizeEmbeddedSources" TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)/Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup><Files ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" /></ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        const string prefix = "// SonoHUD: retain upstream compilation policy.\n#nullable disable\n#pragma warning disable CS8632, CS0618, CS9191\n";
+        foreach (var item in Files) {
+          var path = item.ItemSpec;
+          var original = System.IO.File.ReadAllText(path);
+          var content = original.Replace("#nullable restore", "#nullable disable // upstream default");
+          // The host assembly supplies its exact minimum Windows version.
+          content = content.Replace("[assembly: global::System.Runtime.Versioning.SupportedOSPlatform(\"Windows\")]",
+            "// SonoHUD: platform support is declared by the host project's generated AssemblyInfo.");
+          if (!content.StartsWith(prefix, System.StringComparison.Ordinal))
+            content = prefix + content;
+          if (content != original)
+            System.IO.File.WriteAllText(path, content, new System.Text.UTF8Encoding(false));
+        }
+      ]]></Code>
+    </Task>
+  </UsingTask>
+  <Target Name="SonoHUDNormalizeEmbeddedRuntime" BeforeTargets="CsWinRTIncludeProjection"
+          DependsOnTargets="CsWinRTGenerateProjection;CsWinRTAddEmbeddedRuntime_AnySources;CsWinRTAddEmbeddedRuntime_Net5Sources">
+    <ItemGroup><SonoHUDEmbeddedSources Include="$(CsWinRTGeneratedFilesDir)*.cs" /></ItemGroup>
+    <SonoHUDNormalizeEmbeddedSources Files="@(SonoHUDEmbeddedSources)" />
+  </Target>
+</Project>
