@@ -272,9 +272,35 @@ Check("이전 이름으로 저장한 4개 팔레트 및 사용자 지정 값을 
         var restored = OverlayJson.Clone(OverlayJson.Parse(oldJson));
         Assert(restored.Settings.Appearance == (settings with { Theme = newName }) && restored.Settings.MediaSourceAppId == doc.Settings.MediaSourceAppId);
         var theme = MusicTheme.Resolve(settings, null);
-        Assert(theme.Name == newName && theme.Light == (newName is "Silverprint" or "Moss Paper" or "Porcelain"));
+        Assert(theme.Name == newName && theme.Light == (newName == "Silverprint"));
     }
     Assert(MusicTheme.Resolve(new(),null).Name == "Prism RGB");
+});
+Check("새 다크 팔레트의 본문·조작부·진행률·상태 대비", () =>
+{
+    foreach (string name in new[] { "Moss Paper", "Porcelain" })
+    {
+        var palette = MusicTheme.Resolve(new(name), null);
+        Assert(!palette.Light);
+        foreach (var surface in new[] { palette.Background, palette.Surface, palette.Raised })
+        {
+            foreach (var ink in new[] { palette.Ink, palette.Secondary, palette.Muted, palette.Accent, palette.LyricsWord, palette.Error, palette.Warning, palette.Success })
+                Assert(MusicTheme.Contrast(ink, surface) >= 4.5, name + " text " + ink);
+            foreach (var graphic in new[] { palette.Border, palette.Spectrum, palette.Progress, palette.Playhead })
+                Assert(MusicTheme.Contrast(graphic, surface) >= 3, name + " graphic " + graphic);
+        }
+        foreach (var state in new[] { palette.Hover, palette.Selected, palette.Pressed })
+            Assert(MusicTheme.Contrast(palette.Ink, state) >= 4.5);
+        Assert(MusicTheme.Contrast(palette.Progress, palette.ProgressTrack) >= 3);
+        Assert(MusicTheme.Contrast(palette.Playhead, palette.ProgressTrack) >= 3);
+        foreach (var cover in new[] { "#171717", "#FFFFFF", "#FF0033", "#004FFF" })
+        {
+            var custom = MusicTheme.Resolve(new(name, "#353535", "#343434", true), cover);
+            Assert(MusicTheme.Contrast(custom.OnAccent, custom.Accent) >= 4.5);
+            Assert(MusicTheme.Contrast(custom.Accent, custom.Raised) >= 4.5);
+            Assert(MusicTheme.Contrast(custom.Spectrum, custom.Raised) >= 3);
+        }
+    }
 });
 Check("Studio Amber에서 저장된 민트는 Prism RGB의 조작 강조에만 적용",()=>{
     var configured=new AppearanceSettings("Studio Amber","#87DFC4");

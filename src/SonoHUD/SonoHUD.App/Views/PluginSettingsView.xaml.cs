@@ -33,10 +33,13 @@ public partial class PluginSettingsView : UserControl
         if(Details is null)return;
         var r=Extensions.SelectedItem as PluginRow;
         Details.Text=r?.Detail??"";
+        StoreNotice.Text=host?.StoreNotice??"";
+        StoreNotice.Visibility=StoreNotice.Text.Length==0?Visibility.Collapsed:Visibility.Visible;
+        RepairButton.Visibility=host?.CanRepair==true?Visibility.Visible:Visibility.Collapsed;
         bool active=r?.State=="활성화";
-        EnableButton.IsEnabled=r?.Manifest?.Compatible==true && !active && r.State!="중복 ID";
-        DisableButton.IsEnabled=active;
-        RemoveButton.IsEnabled=r is not null && r.SourcePath!=host?.DirectoryPath;
+        EnableButton.IsEnabled=host?.CanManage==true && r?.Manifest?.Compatible==true && !active && r.State!="중복 ID" && r.State!="다른 실행에서 사용 중";
+        DisableButton.IsEnabled=host?.CanManage==true && (active || r?.Approved==true);
+        RemoveButton.IsEnabled=host?.CanManage==true && r is not null && r.SourcePath!=host.DirectoryPath;
     }
     bool Confirm(string prompt)=>MessageBox.Show(Window.GetWindow(this),prompt,"SonoHUD · 확장 기능",MessageBoxButton.OKCancel,MessageBoxImage.Question,MessageBoxResult.Cancel)==MessageBoxResult.OK;
     void Run(Action<PluginHost> action)
@@ -73,6 +76,11 @@ public partial class PluginSettingsView : UserControl
     });
     void Disable(object sender,RoutedEventArgs args)=>Run(h=>{if(Extensions.SelectedItem is PluginRow {Manifest:{} m})h.Disable(m.Id);});
     void Remove(object sender,RoutedEventArgs args)=>Run(h=>{if(Extensions.SelectedItem is PluginRow row && Confirm($"{row.DisplayName}을 제거할까요? 기존 확장 설정은 보관합니다."))h.Remove(row);});
-    void Rescan(object sender,RoutedEventArgs args)=>Run(h=>h.Refresh());
+    void Repair(object sender,RoutedEventArgs args)=>Run(h=>{
+        string prompt=h.HasBackup?"백업의 승인 목록을 복원할까요? 설치된 파일 지문이 승인된 지문과 일치하는 확장만 다시 활성화됩니다."
+            :"사용할 수 있는 승인 백업이 없습니다. 손상된 파일을 따로 보관하고 새 승인 목록으로 시작할까요? 각 확장을 다시 승인해야 합니다.";
+        if(Confirm(prompt))h.RepairApprovals();
+    });
+    void Rescan(object sender,RoutedEventArgs args)=>Run(h=>h.Rescan());
     void Folder(object sender,RoutedEventArgs args)=>Run(h=>h.OpenFolder());
 }

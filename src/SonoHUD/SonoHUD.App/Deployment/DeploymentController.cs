@@ -123,7 +123,12 @@ internal sealed class DeploymentController : IDisposable
         await VerifyCached(ready);
         restartArgs = args;
         applyRequested = true;
-        window.Close(); // StudioWindow saves edits, stops capture and detaches its child windows first.
+        try
+        {
+            if (window is not StudioWindow studio || !await studio.ExitApplicationAsync(ExitReason.RestartForUpdate))
+                applyRequested = false;
+        }
+        catch { applyRequested = false; throw; }
     });
 
     internal void ApplyAfterCleanup()

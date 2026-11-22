@@ -83,6 +83,7 @@ internal sealed partial class StudioViewModel : INotifyPropertyChanged
     public bool ShowControls { get => Document.Overlay.ShowControls; set => Change("재생 버튼 표시 변경", d => d.Overlay.ShowControls = value); }
     public bool ClickThrough { get => Document.Overlay.ClickThrough; set => Change("마우스 클릭 통과 변경", d => d.Overlay.ClickThrough = value); }
     public bool ShowOnStartup { get => Document.Settings.ShowOverlaysOnStartup; set => Change("시작 시 표시 변경", d => d.Settings.ShowOverlaysOnStartup = value); }
+    public bool KeepRunningOnClose { get => Document.Settings.KeepRunningOnClose; set => Change("창 닫기 동작 변경", d => d.Settings.KeepRunningOnClose = value); }
     public bool HotkeyEnabled { get => Document.Settings.HotkeyEnabled; set => Change("단축키 사용 변경", d => d.Settings.HotkeyEnabled = value); }
     public int HotkeyFunction { get => Document.Settings.HotkeyFunction; set => Change("단축키 변경", d => d.Settings.HotkeyFunction = value); }
     public string HotkeyStatus { get; internal set; } = "단축키 준비 중";

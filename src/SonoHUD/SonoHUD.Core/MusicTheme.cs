@@ -26,9 +26,9 @@ public sealed record MusicTheme(string Name, string Background, string Surface, 
         new(PrismName, "#101010", "#191919", "#272727", "#F8F8FA", "#CDCDD2", "#B0B0B6", "#4D4D4D", "#ECECF2", "#69EDFF", "#6AF1E3", "#FFE595") { Playhead = "#FF80C6", SpectrumGradient=true },
         new("Silverprint",   "#D8DDE1", "#F1F3F4", "#E3E7EA", "#1C232B", "#4F5B64", "#4F5B64", "#9DA7B0", "#244A88", "#54677B", "#244A88", "#224680"),
         new("Night Ferry",   "#151C2B", "#222C40", "#2E3A50", "#F1EFE8", "#B9C2CC", "#B9C2CC", "#53617A", "#DBC69F", "#A5B4C7", "#CAD1D8", "#E3CFA9") { Playhead = "#DBC69F" },
-        new("Moss Paper",    "#CFD1C0", "#E7E8DA", "#D9DCCC", "#292E25", "#515A48", "#515A48", "#929982", "#414F2E", "#626E52", "#3C4531", "#475F2D") { Playhead = "#414F2E" },
+        new("Moss Paper",    "#161D17", "#253027", "#313C32", "#F5F1E2", "#D6DDC5", "#BEC8B1", "#7A8770", "#CDDBA5", "#ACBF96", "#EAF1CE", "#E3D595") { Playhead = "#F3E9BB" },
         new("Monochrome",    "#101112", "#252628", "#38393B", "#F6F6F3", "#D3D3CF", "#B5B6B6", "#616264", "#F0F0ED", "#C2C4C3", "#E1E1DC", "#FFFFFF"),
-        new("Porcelain",     "#EEE9DF", "#FFFCF5", "#E6DED1", "#30291F", "#554B40", "#665A4F", "#9F9284", "#813F2F", "#71613E", "#4D4134", "#783D29")
+        new("Porcelain",     "#111B22", "#21313D", "#2C404D", "#F3F8FC", "#C9DCE7", "#B5C8D5", "#778D9D", "#ACD8E6", "#93B8E8", "#E1F4FD", "#AAC8FF") { Playhead = "#F4FCFF" }
     ];
     public bool SpectrumGradient {get; init;}
     public bool Light => Contrast(Surface, "#000000") > Contrast(Surface, "#FFFFFF");

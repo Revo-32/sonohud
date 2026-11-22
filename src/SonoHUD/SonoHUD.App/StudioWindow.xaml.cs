@@ -19,6 +19,8 @@ using SonoHUD.App.Taskbar;
 
 namespace SonoHUD.App;
 
+internal enum ExitReason { CloseWindow, TrayExit, RestartForUpdate, WindowsSessionEnding }
+
 public partial class StudioWindow : Window
 {
     readonly StudioViewModel vm;
@@ -35,7 +37,10 @@ public partial class StudioWindow : Window
     SpectrumSettings renderSpectrumOptions=new();
     OverlayPositionWindow? positionWindow;
     IntPtr hwnd; HwndSource? source;
-    bool closing, canClose, audioBusy;
+    bool closing, canClose, audioBusy, sessionEnding;
+    Task<bool>? exitTask;
+    DispatcherOperation? pendingHide;
+    bool MainPresented => IsVisible && WindowState != WindowState.Minimized;
     string lastPage = "Home";
     bool wasGallery;
     (bool Enabled, int Key)? hotkey;
@@ -83,13 +88,14 @@ public partial class StudioWindow : Window
         PreviewKeyDown += (_, e) => { if (e.Key == Key.Escape && vm.IsPositioning) { EndPosition(false); e.Handled=true; } else if (e.Key == Key.S && Keyboard.Modifiers == ModifierKeys.Control) { _ = vm.SaveAsync(); e.Handled = true; } };
         Activated += (_,_)=>WindowChromeTheme.Apply(hwnd,true,vm.Palette);
         Deactivated += (_,_)=>WindowChromeTheme.Apply(hwnd,false,vm.Palette);
-        StateChanged += (_,_) => { ApplyAppearance(); if(vm.OverlayVisible && WindowState!=WindowState.Minimized)RefreshPreviewPanels(vm.RenderScene()); UpdateCaptionControls(); if (WindowState == WindowState.Minimized && positionWindow is not null) EndPosition(false); RefreshSpectrum(); };
-        IsVisibleChanged += (_,_) => { ApplyAppearance(); RefreshSpectrum(); };
+        StateChanged += (_,_) => { UpdateCaptionControls(); if (WindowState == WindowState.Minimized && positionWindow is not null) EndPosition(false); RefreshPresentation(); };
+        IsVisibleChanged += (_,_) => RefreshPresentation();
         SystemParameters.StaticPropertyChanged += SystemMotionChanged;
-        Closing += CloseAsync;
+        Closing += WindowClosing;
         if (automation) { diagnostics = new(TimeSpan.FromMilliseconds(350), DispatcherPriority.Background, (_,_) => Diagnostics(), Dispatcher); diagnostics.Start(); }
-        audioTimer = new(TimeSpan.FromSeconds(2), DispatcherPriority.Background, async (_,_) => await RefreshAudio(), Dispatcher); audioTimer.Start();
-        Loaded += async (_,_) => { await vm.SaveAsync(false); await RefreshAudio(); vm.SetSpectrumOutputs(await Task.Run(SpectrumCapture.Outputs)); };
+        audioTimer.Interval = TimeSpan.FromSeconds(2);
+        audioTimer.Tick += async (_,_) => await RefreshAudio();
+        Loaded += async (_,_) => { await vm.SaveAsync(false); vm.SetSpectrumOutputs(await Task.Run(SpectrumCapture.Outputs)); };
     }
     internal void RefreshRenderOnly()
     {
@@ -135,7 +141,36 @@ public partial class StudioWindow : Window
     }
 
     void MinimizeWindow(object sender, RoutedEventArgs e) { if(!renderOnly) SystemCommands.MinimizeWindow(this); }
-    void OpenTaskbarSettings() { vm.NavigateCommand.Execute("Settings");Show();WindowState=WindowState.Normal;Activate(); }
+    void OpenTaskbarSettings() { if (!closing) { vm.NavigateCommand.Execute("Settings"); OpenFromTray(); } }
+    internal void OpenFromTray()
+    {
+        if (closing) return;
+        pendingHide?.Abort();
+        pendingHide = null;
+        ShowInTaskbar = true;
+        Show();
+        if (WindowState == WindowState.Minimized) WindowState = WindowState.Normal;
+        Activate();
+    }
+    void RefreshPresentation()
+    {
+        if (closing) return;
+        ApplyAppearance();
+        if (MainPresented)
+        {
+            if (vm.OverlayVisible && hwnd != 0) RefreshPreviewPanels(vm.RenderScene());
+            UpdateSelection();
+        }
+        RefreshAudioPolling();
+        RefreshSpectrum();
+    }
+    void RefreshAudioPolling()
+    {
+        bool poll = MainPresented && vm.AudioVisible && !closing;
+        if (poll == audioTimer.IsEnabled) return;
+        audioTimer.IsEnabled = poll;
+        if (poll) _ = RefreshAudio();
+    }
     void ToggleMaximizeWindow(object sender, RoutedEventArgs e)
     {
         if(renderOnly)return;
@@ -150,7 +185,23 @@ public partial class StudioWindow : Window
         AutomationProperties.SetName(MaximizeButton,maximized?"창 이전 크기로":"창 최대화");
         DeckFrame.Margin=new Thickness(maximized?6:12);
     }
-    void VmPropertyChanged(object? s, PropertyChangedEventArgs e) { if (string.IsNullOrEmpty(e.PropertyName)) { if(lastPage != vm.Page) { lastPage=vm.Page; PageScroll.ScrollToTop(); if(vm.OverlayVisible && !renderOnly && hwnd!=0)RefreshPreviewPanels(vm.RenderScene()); DesignMotion.Transition(PageContent,vm.Document.Overlay.Animation); } if(vm.OverlayVisible && vm.DesignGalleryVisible && !wasGallery && hwnd!=0)RefreshPreviewPanels(vm.RenderScene());wasGallery=vm.OverlayVisible && vm.DesignGalleryVisible; if(!vm.AnimationsEnabled)DesignMotion.Transition(PageContent,AnimationProfile.Off); UpdateSelection(); RefreshSpectrum(); } }
+    void VmPropertyChanged(object? s, PropertyChangedEventArgs e)
+    {
+        if (!string.IsNullOrEmpty(e.PropertyName) || closing) return;
+        bool pageChanged = lastPage != vm.Page;
+        lastPage = vm.Page;
+        bool galleryVisible = vm.OverlayVisible && vm.DesignGalleryVisible;
+        if (MainPresented)
+        {
+            if (pageChanged) { PageScroll.ScrollToTop(); DesignMotion.Transition(PageContent,vm.Document.Overlay.Animation); }
+            if (vm.OverlayVisible && hwnd!=0 && (pageChanged || galleryVisible && !wasGallery)) RefreshPreviewPanels(vm.RenderScene());
+            if (!vm.AnimationsEnabled) DesignMotion.Transition(PageContent,AnimationProfile.Off);
+            UpdateSelection();
+        }
+        wasGallery = galleryVisible;
+        RefreshAudioPolling();
+        RefreshSpectrum();
+    }
     void UpdateSelection()
     {
         void Selected(Button b,bool selected)
@@ -226,7 +277,7 @@ public partial class StudioWindow : Window
             Resources["PrismRibbon"]=Brushes.Transparent;
             Resources["PrismRefraction"]=Brushes.Transparent;
         }
-        bool animate=appliedTheme is not null && vm.Appearance.ArtworkAccent && vm.AnimationsEnabled && SystemParameters.ClientAreaAnimation;
+        bool animate=MainPresented && appliedTheme is not null && vm.Appearance.ArtworkAccent && vm.AnimationsEnabled && SystemParameters.ClientAreaAnimation;
         appliedTheme=palette;
         foreach(var scope in new FrameworkElement[]{this,HomePlayer,Mini,SpectrumSettings,WidgetSettings})
             StudioAppearance.Apply(scope.Resources,palette,animate);
@@ -385,7 +436,7 @@ public partial class StudioWindow : Window
     }
     async Task RefreshAudio()
     {
-        if (audioBusy || closing) return; audioBusy=true;
+        if (audioBusy || closing || !MainPresented || !vm.AudioVisible) return; audioBusy=true;
         try { var state=await Task.Run(AudioOutputReader.Read); vm.AudioStatus=state.Text; vm.OutputLevel=state.Level; vm.NotifyAudio(); }
         finally { audioBusy=false; RefreshSpectrum(); }
     }
@@ -394,25 +445,73 @@ public partial class StudioWindow : Window
         if (closing) return;
         try
         {
-            var data=new { utc=DateTimeOffset.UtcNow,pid=Environment.ProcessId,hwnd=hwnd.ToInt64(),foreground=Native.GetForegroundWindow().ToInt64(),settings=vm.Document,document=vm.RenderDocument(),extensions=new { lyrics=vm.HasLyricsProvider, effectivePreset=vm.EffectivePreset.ToString(), availablePresets=gallery.Keys.Count(vm.PresetAvailable), homeLyrics=HomePlayer.OnlineLyricsPanel.Visibility.ToString(), homeSpectrum=HomePlayer.FrequencySpectrum.ActualHeight },page=vm.Page,section=vm.Section,positioning=vm.IsPositioning,positionHwnd=positionWindow is null ? 0 : new WindowInteropHelper(positionWindow).Handle.ToInt64(),overlayWindows=runtime.Snapshot(),windowCount=runtime.WindowCount,nodeCount=runtime.NodeCount,uploads=runtime.UploadCount,spectrum=new { spectrumCoordinator.EffectiveLimit,spectrumCoordinator.SubmittedFrames,spectrumCoordinator.LastSnapshotAgeMs,spectrumCoordinator.CaptureStatus,SpectrumCapture.ActiveWorkers },media=new {vm.Media.State.Source,vm.Media.State.IsDemo,vm.Media.State.IsPlaying,vm.Media.State.Status,vm.Media.State.CommandStatus,vm.Media.State.CanToggle,vm.Media.State.CanNext,vm.Media.State.CanPrevious,vm.Media.State.CanSeek,vm.Media.State.AlbumTitle,vm.Media.State.PositionSeconds,vm.Media.State.DurationSeconds,lyricsKind=vm.Lyrics.Document.Format.ToString(),lyricsStatus=vm.Lyrics.Status.ToString(),lyricsRecordId=vm.Lyrics.Document.RecordId,lyricsLineCount=vm.Lyrics.Document.Lines.Count,lyricsUncertain=vm.Lyrics.Frame.Uncertain,titleHash=Convert.ToHexString(SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(vm.Media.State.Title)))},sessions=vm.Media.Sessions,vm.Status,vm.SaveStatus,vm.HotkeyStatus };
+            var data=new { utc=DateTimeOffset.UtcNow,pid=Environment.ProcessId,hwnd=hwnd.ToInt64(),foreground=Native.GetForegroundWindow().ToInt64(),lifecycle=new { visible=IsVisible,minimized=WindowState==WindowState.Minimized,vm.KeepRunningOnClose,audioPolling=audioTimer.IsEnabled,trayRegistered=(Application.Current as App)?.TrayRegistered==true,widgetHwnd=taskbar?.WidgetHandle.ToInt64()??0 },settings=vm.Document,document=vm.RenderDocument(),extensions=new { lyrics=vm.HasLyricsProvider, effectivePreset=vm.EffectivePreset.ToString(), availablePresets=gallery.Keys.Count(vm.PresetAvailable), homeLyrics=HomePlayer.OnlineLyricsPanel.Visibility.ToString(), homeSpectrum=HomePlayer.FrequencySpectrum.ActualHeight },page=vm.Page,section=vm.Section,positioning=vm.IsPositioning,positionHwnd=positionWindow is null ? 0 : new WindowInteropHelper(positionWindow).Handle.ToInt64(),overlayWindows=runtime.Snapshot(),windowCount=runtime.WindowCount,nodeCount=runtime.NodeCount,uploads=runtime.UploadCount,spectrum=new { spectrumCoordinator.EffectiveLimit,spectrumCoordinator.SubmittedFrames,spectrumCoordinator.LastSnapshotAgeMs,spectrumCoordinator.CaptureStatus,SpectrumCapture.ActiveWorkers },media=new {vm.Media.State.Source,vm.Media.State.IsDemo,vm.Media.State.IsPlaying,vm.Media.State.Status,vm.Media.State.CommandStatus,vm.Media.State.CanToggle,vm.Media.State.CanNext,vm.Media.State.CanPrevious,vm.Media.State.CanSeek,vm.Media.State.AlbumTitle,vm.Media.State.PositionSeconds,vm.Media.State.DurationSeconds,lyricsKind=vm.Lyrics.Document.Format.ToString(),lyricsStatus=vm.Lyrics.Status.ToString(),lyricsRecordId=vm.Lyrics.Document.RecordId,lyricsLineCount=vm.Lyrics.Document.Lines.Count,lyricsUncertain=vm.Lyrics.Frame.Uncertain,titleHash=Convert.ToHexString(SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(vm.Media.State.Title)))},sessions=vm.Media.Sessions,vm.Status,vm.SaveStatus,vm.HotkeyStatus };
             string path=Path.Combine(vm.Repository.DirectoryPath,"diagnostics.json"); File.WriteAllText(path+".tmp",JsonSerializer.Serialize(data,new JsonSerializerOptions(SceneJson.Options){IncludeFields=true})); File.Move(path+".tmp",path,true);
         } catch(Exception ex) when(ex is IOException or UnauthorizedAccessException) { }
     }
-    async void CloseAsync(object? sender,CancelEventArgs e)
+    void WindowClosing(object? sender, CancelEventArgs e)
     {
-        if(canClose)return; e.Cancel=true; if(closing)return;
-        if(positionWindow is not null)EndPosition(false);
-        closing=true; IsEnabled=false; diagnostics?.Stop(); audioTimer.Stop(); StopSpectrum(); await vm.SaveAsync(false);
-        if(!vm.LastSaveSucceeded) { closing=false;IsEnabled=true;diagnostics?.Start();audioTimer.Start();RefreshSpectrum();vm.Status="저장되지 않은 변경 사항이 있습니다. 경로를 확인하고 다시 저장해 주세요.";return; }
+        if (canClose) return;
+        e.Cancel = true;
+        if (closing) return;
+        if (!vm.KeepRunningOnClose) { _ = ExitApplicationAsync(ExitReason.CloseWindow); return; }
+        if (pendingHide is not null) return;
+        pendingHide = Dispatcher.BeginInvoke(() =>
+        {
+            pendingHide = null;
+            if (closing) return;
+            if (positionWindow is not null) EndPosition(false);
+            Hide();
+            ShowInTaskbar = false;
+            vm.Log.Write("window_hidden_to_tray");
+        });
+    }
+    internal Task<bool> ExitApplicationAsync(ExitReason reason)
+    {
+        if (reason == ExitReason.WindowsSessionEnding) sessionEnding = true;
+        return exitTask ??= FinishExitAsync(reason);
+    }
+
+    internal void FinishWindowsSession()
+    {
+        // WPF shuts the dispatcher down once SessionEnding returns. Pump the normal
+        // queue here so pending saves and Composition queue shutdown can complete.
+        var exit = ExitApplicationAsync(ExitReason.WindowsSessionEnding);
+        if (!exit.IsCompleted)
+        {
+            var frame = new DispatcherFrame();
+            exit.GetAwaiter().OnCompleted(() => frame.Continue = false);
+            Dispatcher.PushFrame(frame);
+        }
+        exit.GetAwaiter().GetResult();
+    }
+
+    async Task<bool> FinishExitAsync(ExitReason reason)
+    {
+        closing = true;
+        await Dispatcher.Yield(DispatcherPriority.Normal);
+        if (positionWindow is not null) EndPosition(false);
+        IsEnabled=false; diagnostics?.Stop(); audioTimer.Stop(); StopSpectrum();
+        await vm.SaveAsync(false);
+        if (!vm.LastSaveSucceeded && !sessionEnding)
+        {
+            closing=false; exitTask=null; IsEnabled=true; diagnostics?.Start();
+            OpenFromTray(); RefreshPresentation();
+            vm.Status="저장되지 않은 변경 사항이 있습니다. 경로를 확인하고 다시 저장해 주세요.";
+            return false;
+        }
         spectrumCoordinator.Dispose(); taskbar?.Dispose();
         vm.Stop();vm.Changed-=RefreshVisuals;vm.PropertyChanged-=VmPropertyChanged;vm.PositionRequested-=BeginPosition;vm.PositionEndRequested-=EndPosition;vm.SettingsChanged-=RegisterHotkey;vm.MotionReplayRequested-=ReplayMotion;
         SystemParameters.StaticPropertyChanged-=SystemMotionChanged;
         vm.Lyrics.FrameChanged-=RefreshLyrics;
         vm.Media.Dispose();Native.UnregisterHotKey(hwnd,1);source?.RemoveHook(WindowMessage);runtime.CommandRequested-=MediaCommand;
-        await runtime.ShutdownAsync(); ElementDrawing.ClearCache();vm.Log.Write("app_shutdown_complete");canClose=true;
-        // Cleanup may complete synchronously (for example after an earlier shutdown).
-        // Leave the current Closing event before asking WPF to close again.
-        _ = Dispatcher.BeginInvoke(() => { Close(); Application.Current.Shutdown(); }, DispatcherPriority.Normal);
+        await runtime.ShutdownAsync();
+        ElementDrawing.ClearCache();
+        canClose = true;
+        vm.Log.Write("app_shutdown_complete", new { reason=(sessionEnding ? ExitReason.WindowsSessionEnding : reason).ToString(), saved=vm.LastSaveSucceeded });
+        if (!sessionEnding)
+            _ = Dispatcher.BeginInvoke(() => { Close(); Application.Current.Shutdown(); }, DispatcherPriority.Normal);
+        return true;
     }
 }
 

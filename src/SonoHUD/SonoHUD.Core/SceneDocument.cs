@@ -61,6 +61,7 @@ public sealed record AppSettings
 {
     public AppearanceSettings? Appearance { get; set; }
     public bool ShowOverlaysOnStartup { get; set; } = true;
+    public bool KeepRunningOnClose { get; set; }
     public bool DefaultClickThrough { get; set; } = true;
     public string DefaultMonitorId { get; set; } = "";
     public AnimationProfile DefaultAnimation { get; set; } = AnimationProfile.Calm;

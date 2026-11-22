@@ -67,6 +67,7 @@ def copy_snapshot(stage):
              "docs/release/known-limitations.md","docs/release/release-notes.md","docs/release/release-pipeline.md",
              "scripts/audit-release.py","scripts/New-Distribution.ps1","scripts/Set-ReleaseFeed.ps1",
              ".gitignore",".gitattributes","README.en.md","SECURITY.md","docs/screenshots/core-home.png","docs/screenshots/core-overlay.png",
+             "docs/branding/banners/sonohud-hero-dark-web.png","docs/branding/sources/curated/compact.png","docs/screenshots/taskbar-prism.png","docs/screenshots/widget-themes.png",
              "docs/release/update-trust.json","docs/release/M8.1-v1.0.0-release-notes.md","docs/release/M8.1-signing-key-policy.md",
              "docs/release/M8.1-github-release-playbook.md","scripts/Manage-ReleaseKey.ps1","scripts/check-release-slot.py",
              "scripts/Sign-ReleaseFeed.ps1","scripts/check-manifest.py","scripts/Install-NativeToolchain.py"}

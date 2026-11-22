@@ -1,4 +1,6 @@
 using System.IO;
+using System.IO.MemoryMappedFiles;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
@@ -12,11 +14,15 @@ namespace SonoHUD.App;
 
 public partial class App : Application
 {
+    [DllImport("user32.dll")] static extern bool AllowSetForegroundWindow(int processId);
     Mutex? instance;
+    MemoryMappedFile? owner;
     AppLog? log;
     EventWaitHandle? openMain;
     RegisteredWaitHandle? openListener;
     LoginTray? tray;
+    bool sessionEnding;
+    internal bool TrayRegistered => tray?.Registered == true;
     internal DeploymentController? Deployment { get; private set; }
     internal string[] RestartArgs { get; private set; } = [];
 
@@ -29,17 +35,28 @@ public partial class App : Application
             string? Arg(string name) { int at = Array.IndexOf(e.Args, name); return at >= 0 && at + 1 < e.Args.Length ? e.Args[at + 1] : null; }
             var policy = new ReleasePolicy();
             string? dataArg = Arg("--data-dir");
-            string directory = Path.GetFullPath(dataArg ?? policy.DefaultDataDirectory);
+            string directory = Path.TrimEndingDirectorySeparator(Path.GetFullPath(dataArg ?? policy.DefaultDataDirectory));
             if (dataArg is not null) RestartArgs = ["--data-dir", directory];
             string key = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(directory.ToUpperInvariant())))[..24];
             // Create the activation event first so a second launch can signal a starting process.
             openMain = new(false, EventResetMode.AutoReset, "Local\\SonoHUD-Open-" + key);
+            owner = MemoryMappedFile.CreateOrOpen("Local\\SonoHUD-Owner-" + key, sizeof(int));
+            using var ownerId = owner.CreateViewAccessor(0, sizeof(int));
             instance = new(true, "Local\\SonoHUD-" + key, out bool created);
             if (!created)
             {
-                if (!login) openMain.Set();
+                if (!login)
+                {
+                    // Windows permits a user-launched process to delegate foreground activation.
+                    // The primary may still be writing its PID during simultaneous startup.
+                    SpinWait.SpinUntil(() => ownerId.ReadInt32(0) > 0, 250);
+                    int pid = ownerId.ReadInt32(0);
+                    if (pid > 0) AllowSetForegroundWindow(pid);
+                    openMain.Set();
+                }
                 Shutdown(); return;
             }
+            ownerId.Write(0, Environment.ProcessId);
             string? migration = null;
             if (dataArg is null && policy.PackageId == "SonoHUD.Core")
                 try { migration = DataMigration.ImportLegacy(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RevoMusic"), directory); }
@@ -61,20 +78,12 @@ public partial class App : Application
             else if (migration is not null) vm.Status = migration;
             openListener = ThreadPool.RegisterWaitForSingleObject(openMain, (_, _) =>
             {
-                if (!Dispatcher.HasShutdownStarted) Dispatcher.BeginInvoke(() =>
-                {
-                    if (tray is not null) tray.Open();
-                    else { window.Show(); if (window.WindowState == WindowState.Minimized) window.WindowState = WindowState.Normal; window.Activate(); }
-                });
+                if (!Dispatcher.HasShutdownStarted) Dispatcher.BeginInvoke(window.OpenFromTray);
             }, null, Timeout.Infinite, false);
             vm.StartOnlineLyrics();
-            if (login)
-            {
-                window.ShowActivated = false;
-                window.ShowInTaskbar = false;
-                tray = new(window);
-            }
-            else window.Show();
+            if (login) { window.ShowActivated = false; window.ShowInTaskbar = false; }
+            tray = new(window);
+            if (!login) window.Show();
             Deployment.Begin();
             await media.StartAsync();
         }
@@ -85,15 +94,24 @@ public partial class App : Application
             Shutdown(1);
         }
     }
+    protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
+    {
+        base.OnSessionEnding(e);
+        if (e.Cancel) return;
+        sessionEnding = true;
+        if (MainWindow is StudioWindow studio) studio.FinishWindowsSession();
+    }
+
     protected override void OnExit(ExitEventArgs e)
     {
         openListener?.Unregister(null);
         openMain?.Dispose();
         tray?.Dispose();
-        try { Deployment?.ApplyAfterCleanup(); }
+        try { if (!sessionEnding) Deployment?.ApplyAfterCleanup(); }
         catch (Exception ex) { log?.Error("업데이트 적용 시작 실패", ex); }
         Deployment?.Dispose();
         log?.Dispose();
+        owner?.Dispose();
         instance?.Dispose();
         base.OnExit(e);
     }
