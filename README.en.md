@@ -6,9 +6,9 @@
 
 See what’s playing in your usual music app, right on your desktop or taskbar. SonoHUD is an open-source music HUD for Windows with a full player view of its own.
 
-**[Download for Windows ↓](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-Setup.exe)** · [Portable ZIP](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-v1.0.0-win-x64-portable.zip) · [Corresponding source](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-v1.0.0-source.zip) · [Latest release](https://github.com/Revo-32/sonohud/releases/latest)
+**[Download for Windows ↓](https://github.com/Revo-32/sonohud/releases/latest/download/SonoHUD-Setup.exe)** · [Portable ZIP](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SonoHUD-v1.0.1-win-x64-portable.zip) · [Corresponding source](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SonoHUD-v1.0.1-source.zip) · [Latest release](https://github.com/Revo-32/sonohud/releases/latest)
 
-v1.0.0 Stable · Windows 11 x64 · [Requires .NET 10 Desktop Runtime x64](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+v1.0.1 Stable · Windows 11 x64 · [Requires .NET 10 Desktop Runtime x64](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 ## Three ways to see what’s playing
 
@@ -26,7 +26,7 @@ v1.0.0 Stable · Windows 11 x64 · [Requires .NET 10 Desktop Runtime x64](https:
 2. For the **installer**, run `SonoHUD-Setup.exe` and open SonoHUD from Start. For **Portable**, extract the entire ZIP into a new folder and run `SonoHUD.exe`.
 3. Play a track in your usual music app. If you have more than one player open, choose one in **Audio → Music source** (오디오 → 음악 소스).
 
-The installed app checks the Stable channel in **Settings → Startup and updates** and restarts to apply an update. For Portable, extract the new version into a fresh folder. The installer and app are unsigned. SmartScreen may show a warning, and organization policies can block execution. [SHA-256 checksums](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SHA256SUMS.txt) · [Install and uninstall guide](docs/release/core-user-guide.md) · [Known limitations](docs/release/known-limitations.md)
+The installed app checks the Stable channel in **Settings → Startup and updates** and restarts to apply an update. For Portable, extract the new version into a fresh folder. The installer and app are unsigned. SmartScreen may show a warning, and organization policies can block execution. [SHA-256 checksums](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SHA256SUMS.txt) · [Install and uninstall guide](docs/release/core-user-guide.md) · [Known limitations](docs/release/known-limitations.md)
 
 ## Extensions
 
@@ -34,6 +34,6 @@ The public Core ships without an online lyrics provider. Install a trusted exten
 
 ## Development and license
 
-Build on Windows x64 with the .NET SDK version pinned in `global.json`. Use Issues for feature requests and bug reports. Follow the security policy for private reports. [Build instructions](BUILD-EMBEDDED.md) · [Issues](https://github.com/Revo-32/sonohud/issues) · [Security policy](SECURITY.md) · [v1.0.0 release notes](https://github.com/Revo-32/sonohud/releases/tag/v1.0.0)
+Build on Windows x64 with the .NET SDK version pinned in `global.json`. Use Issues for feature requests and bug reports. Follow the security policy for private reports. [Build instructions](BUILD-EMBEDDED.md) · [Issues](https://github.com/Revo-32/sonohud/issues) · [Security policy](SECURITY.md) · [v1.0.1 release notes](https://github.com/Revo-32/sonohud/releases/tag/v1.0.1)
 
 SonoHUD Core is licensed under GPL-3.0-or-later. The taskbar widget incorporates modified FluentFlyout code. Individual licenses, including MIT for libraries and OFL for fonts, are listed in the notices. [License](LICENSE) · [FluentFlyout credits and changes](licenses/FluentFlyout-v2.16.1/SONOHUD-CHANGES.md) · [Third-party notices](THIRD-PARTY-NOTICES.md)

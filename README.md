@@ -6,9 +6,9 @@
 
 평소 쓰는 음악 앱은 그대로 두고, 듣고 있는 곡을 홈 플레이어와 데스크톱 오버레이, 작업 표시줄에서 확인하세요. Windows용 오픈소스 앱입니다.
 
-**[Windows용 설치 파일 다운로드 ↓](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-Setup.exe)** · [Portable ZIP](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-v1.0.0-win-x64-portable.zip) · [대응 소스](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SonoHUD-v1.0.0-source.zip) · [최신 릴리스](https://github.com/Revo-32/sonohud/releases/latest)
+**[Windows용 설치 파일 다운로드 ↓](https://github.com/Revo-32/sonohud/releases/latest/download/SonoHUD-Setup.exe)** · [Portable ZIP](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SonoHUD-v1.0.1-win-x64-portable.zip) · [대응 소스](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SonoHUD-v1.0.1-source.zip) · [최신 릴리스](https://github.com/Revo-32/sonohud/releases/latest)
 
-v1.0.0 Stable · Windows 11 x64 · [.NET 10 Desktop Runtime x64 필요](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+v1.0.1 Stable · Windows 11 x64 · [.NET 10 Desktop Runtime x64 필요](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 ## 음악을 보는 세 가지 방법
 
@@ -26,7 +26,7 @@ v1.0.0 Stable · Windows 11 x64 · [.NET 10 Desktop Runtime x64 필요](https://
 2. **설치형**은 `SonoHUD-Setup.exe`를 실행한 뒤 시작 메뉴에서 엽니다. **Portable**은 ZIP 전체를 새 폴더에 풀고 `SonoHUD.exe`를 실행합니다.
 3. 평소 쓰는 음악 앱에서 곡을 재생합니다. 여러 플레이어가 열려 있다면 SonoHUD의 **오디오 → 음악 소스**에서 원하는 앱을 선택하세요.
 
-설치형은 **설정 → 시작 및 업데이트**에서 Stable 업데이트를 확인하고 재시작해 적용합니다. Portable은 새 버전의 ZIP을 새 폴더에 풉니다. 설치기와 앱에는 Windows 게시자 서명이 없어 SmartScreen 경고가 표시되거나 조직 정책상 실행이 제한될 수 있습니다. [파일 지문(SHA-256)](https://github.com/Revo-32/sonohud/releases/download/v1.0.0/SHA256SUMS.txt) · [설치·제거 안내](docs/release/core-user-guide.md) · [알려진 제한](docs/release/known-limitations.md)
+설치형은 **설정 → 시작 및 업데이트**에서 Stable 업데이트를 확인하고 재시작해 적용합니다. Portable은 새 버전의 ZIP을 새 폴더에 풉니다. 설치기와 앱에는 Windows 게시자 서명이 없어 SmartScreen 경고가 표시되거나 조직 정책상 실행이 제한될 수 있습니다. [파일 지문(SHA-256)](https://github.com/Revo-32/sonohud/releases/download/v1.0.1/SHA256SUMS.txt) · [설치·제거 안내](docs/release/core-user-guide.md) · [알려진 제한](docs/release/known-limitations.md)
 
 ## 확장 기능
 
@@ -34,6 +34,6 @@ v1.0.0 Stable · Windows 11 x64 · [.NET 10 Desktop Runtime x64 필요](https://
 
 ## 개발과 라이선스
 
-Windows x64와 `global.json`에 지정된 .NET SDK로 빌드합니다. 기능 제안이나 오류는 Issues에 남겨 주세요. 보안 문제는 비공개 보고 절차를 이용하세요. [빌드 방법](BUILD-EMBEDDED.md) · [Issues](https://github.com/Revo-32/sonohud/issues) · [보안 정책](SECURITY.md) · [v1.0.0 릴리스 노트](https://github.com/Revo-32/sonohud/releases/tag/v1.0.0)
+Windows x64와 `global.json`에 지정된 .NET SDK로 빌드합니다. 기능 제안이나 오류는 Issues에 남겨 주세요. 보안 문제는 비공개 보고 절차를 이용하세요. [빌드 방법](BUILD-EMBEDDED.md) · [Issues](https://github.com/Revo-32/sonohud/issues) · [보안 정책](SECURITY.md) · [v1.0.1 릴리스 노트](https://github.com/Revo-32/sonohud/releases/tag/v1.0.1)
 
 SonoHUD Core는 GPL-3.0-or-later로 배포합니다. 작업 표시줄 위젯에는 FluentFlyout의 코드를 수정해 사용했습니다. 라이브러리와 글꼴의 MIT·OFL 등 개별 조건은 제3자 고지에서 확인할 수 있습니다. [라이선스](LICENSE) · [원저작자와 수정 내역](licenses/FluentFlyout-v2.16.1/SONOHUD-CHANGES.md) · [제3자 고지](THIRD-PARTY-NOTICES.md)
